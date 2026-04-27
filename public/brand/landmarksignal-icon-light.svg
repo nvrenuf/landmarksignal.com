@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">LandmarkSignal Signal Beacon icon light</title>
+  <rect width="128" height="128" rx="20" fill="#0B1F33"/>
+  <path d="M64 82V54" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M64 94l-20 20h40L64 94z" fill="#FFFFFF"/>
+  <path d="M38 54a36 36 0 0 1 52 0" fill="none" stroke="#4EA1FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M24 38a56 56 0 0 1 80 0" fill="none" stroke="#4EA1FF" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="64" cy="54" r="7" fill="#F2A900"/>
+</svg>

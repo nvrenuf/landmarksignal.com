@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 128" role="img" aria-labelledby="title">
+  <title id="title">LandmarkSignal Shield lockup dark</title>
+  <rect width="640" height="128" fill="#FFFFFF"/>
+  <g transform="translate(24 20)">
+    <path d="M44 60V34" fill="none" stroke="#0B1F33" stroke-width="8" stroke-linecap="round"/>
+    <path d="M44 70L28 88h32L44 70z" fill="#0B1F33"/>
+    <path d="M24 34a28 28 0 0 1 40 0" fill="none" stroke="#2F80ED" stroke-width="6" stroke-linecap="round"/>
+    <path d="M12 20a45 45 0 0 1 64 0" fill="none" stroke="#2F80ED" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="44" cy="34" r="5" fill="#F2A900"/>
+  </g>
+  <text x="132" y="64" fill="#0B1F33" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="700">LandmarkSignal</text>
+  <text x="132" y="98" fill="#2F80ED" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="650">Shield</text>
+</svg>

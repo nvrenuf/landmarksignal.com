@@ -1,0 +1,352 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const assets = {
+  logoDark: "/brand/landmarksignal-logo-dark.svg",
+  logoLight: "/brand/landmarksignal-logo-light.svg",
+  iconDark: "/brand/landmarksignal-icon-dark.svg",
+  iconLight: "/brand/landmarksignal-icon-light.svg",
+  favicon: "/brand/landmarksignal-favicon.svg",
+  runtime: "/brand/landmarksignal-runtime-lockup-dark.svg",
+  radar: "/brand/landmarksignal-radar-lockup-dark.svg",
+  shield: "/brand/landmarksignal-shield-lockup-dark.svg"
+};
+
+const colors = [
+  ["Deep navy", "#0B1F33", "Primary identity color"],
+  ["Signal blue", "#2F80ED", "Signal arcs and controlled emphasis"],
+  ["Light signal blue", "#4EA1FF", "Signal arcs on dark surfaces"],
+  ["Audit amber", "#F2A900", "Audit point accent"],
+  ["White", "#FFFFFF", "Light surfaces and reversed marks"],
+  ["Ink", "#0A0A0A", "High-contrast text"],
+  ["Light gray", "#E6E8EC", "Borders and quiet fills"]
+];
+---
+
+<BaseLayout
+  title="LandmarkSignal Brand Kit"
+  description="Internal LandmarkSignal v1 Signal Beacon brand asset kit."
+>
+  <main class="brand-page">
+    <section class="brand-hero">
+      <div class="brand-container">
+        <p class="brand-kicker">Internal brand kit</p>
+        <h1>Signal Beacon identity system</h1>
+        <p class="brand-lead">
+          The LandmarkSignal mark combines a stable reference point, an intelligence
+          signal, and governed control.
+        </p>
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-container brand-grid">
+        <div>
+          <p class="brand-kicker">Primary system</p>
+          <h2>Logos</h2>
+        </div>
+        <div class="asset-stack">
+          <figure class="asset-surface asset-surface-light">
+            <img src={assets.logoDark} alt="LandmarkSignal primary dark logo" />
+            <figcaption>Dark logo for light surfaces</figcaption>
+          </figure>
+          <figure class="asset-surface asset-surface-dark">
+            <img src={assets.logoLight} alt="LandmarkSignal primary light logo" />
+            <figcaption>Light logo for deep navy surfaces</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-section brand-section-muted">
+      <div class="brand-container brand-grid">
+        <div>
+          <p class="brand-kicker">Compact marks</p>
+          <h2>Icon and favicon</h2>
+        </div>
+        <div class="icon-grid">
+          <figure class="icon-surface">
+            <img src={assets.iconDark} alt="LandmarkSignal icon dark" />
+            <figcaption>Icon dark</figcaption>
+          </figure>
+          <figure class="icon-surface icon-surface-navy">
+            <img src={assets.iconLight} alt="LandmarkSignal icon light" />
+            <figcaption>Icon light</figcaption>
+          </figure>
+          <figure class="icon-surface icon-surface-navy">
+            <img src={assets.favicon} alt="LandmarkSignal favicon" />
+            <figcaption>Favicon</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-container brand-grid">
+        <div>
+          <p class="brand-kicker">Product family</p>
+          <h2>Lockups</h2>
+        </div>
+        <div class="asset-stack">
+          <figure class="asset-surface asset-surface-light">
+            <img src={assets.runtime} alt="LandmarkSignal Runtime lockup" />
+            <figcaption>Runtime</figcaption>
+          </figure>
+          <figure class="asset-surface asset-surface-light">
+            <img src={assets.radar} alt="LandmarkSignal Radar lockup" />
+            <figcaption>Radar</figcaption>
+          </figure>
+          <figure class="asset-surface asset-surface-light">
+            <img src={assets.shield} alt="LandmarkSignal Shield lockup" />
+            <figcaption>Shield</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-section brand-section-muted">
+      <div class="brand-container brand-grid">
+        <div>
+          <p class="brand-kicker">Color system</p>
+          <h2>Palette</h2>
+        </div>
+        <div class="color-grid">
+          {colors.map(([name, hex, use]) => (
+            <article class="color-chip">
+              <span class="swatch" style={`--swatch: ${hex}`}></span>
+              <div>
+                <h3>{name}</h3>
+                <p>{hex}</p>
+                <small>{use}</small>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-container brand-grid">
+        <div>
+          <p class="brand-kicker">Control rules</p>
+          <h2>Usage</h2>
+        </div>
+        <div class="rules-list">
+          <p>Use SVG assets in `public/brand` as the source of truth.</p>
+          <p>Keep the Signal Beacon geometry simple, stable, and controlled.</p>
+          <p>Use dark assets on light surfaces and light assets on deep navy surfaces.</p>
+          <p>Avoid gradients, glows, cyberpunk effects, brain icons, circuit motifs, and AI orbs.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .brand-page {
+    --brand-navy: #0b1f33;
+    --brand-blue: #2f80ed;
+    --brand-light-blue: #4ea1ff;
+    --brand-amber: #f2a900;
+    --brand-white: #ffffff;
+    --brand-ink: #0a0a0a;
+    --brand-gray: #e6e8ec;
+    background: #0b1f33;
+    color: #ffffff;
+    min-height: 100vh;
+  }
+
+  .brand-container {
+    width: min(100% - 2rem, 72rem);
+    margin: 0 auto;
+  }
+
+  .brand-hero,
+  .brand-section {
+    padding: clamp(3rem, 7vw, 6rem) 0;
+  }
+
+  .brand-hero {
+    border-bottom: 1px solid rgba(230, 232, 236, 0.18);
+  }
+
+  .brand-section-muted {
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  .brand-kicker {
+    color: #4ea1ff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+
+  .brand-page h1,
+  .brand-page h2,
+  .brand-page h3 {
+    color: #ffffff;
+    font-family: "Archivo", sans-serif;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .brand-page h1 {
+    max-width: 12ch;
+    font-size: clamp(3rem, 8vw, 5.75rem);
+    line-height: 0.98;
+  }
+
+  .brand-page h2 {
+    max-width: 8ch;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+  }
+
+  .brand-page h3 {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .brand-lead {
+    max-width: 48rem;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.55;
+  }
+
+  .asset-stack,
+  .icon-grid,
+  .color-grid,
+  .rules-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .asset-surface,
+  .icon-surface,
+  .color-chip {
+    margin: 0;
+    border: 1px solid rgba(230, 232, 236, 0.18);
+  }
+
+  .asset-surface {
+    display: grid;
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .asset-surface-light {
+    background: #ffffff;
+  }
+
+  .asset-surface-dark {
+    background: #0b1f33;
+  }
+
+  .asset-surface img {
+    display: block;
+    width: min(100%, 40rem);
+    height: auto;
+  }
+
+  .asset-surface figcaption,
+  .icon-surface figcaption {
+    color: #0b1f33;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .asset-surface-dark figcaption,
+  .icon-surface-navy figcaption {
+    color: #ffffff;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .icon-surface {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+    padding: 1rem;
+    background: #ffffff;
+  }
+
+  .icon-surface-navy {
+    background: #0b1f33;
+  }
+
+  .icon-surface img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .color-grid {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+
+  .color-chip {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+    align-items: center;
+    min-height: 7rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .swatch {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgba(230, 232, 236, 0.38);
+    background: var(--swatch);
+  }
+
+  .color-chip p,
+  .color-chip small,
+  .rules-list p {
+    margin: 0;
+  }
+
+  .color-chip p {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .color-chip small,
+  .rules-list p {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.55;
+  }
+
+  .rules-list {
+    border-top: 1px solid rgba(230, 232, 236, 0.18);
+  }
+
+  .rules-list p {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(230, 232, 236, 0.18);
+  }
+
+  @media (max-width: 48rem) {
+    .brand-grid,
+    .icon-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .brand-page h1,
+    .brand-page h2 {
+      max-width: none;
+    }
+  }
+</style>

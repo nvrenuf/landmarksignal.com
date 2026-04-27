@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 128" role="img" aria-labelledby="title">
+  <title id="title">LandmarkSignal logo light</title>
+  <rect width="520" height="128" fill="#0B1F33"/>
+  <g transform="translate(24 20)">
+    <path d="M44 60V34" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M44 70L28 88h32L44 70z" fill="#FFFFFF"/>
+    <path d="M24 34a28 28 0 0 1 40 0" fill="none" stroke="#4EA1FF" stroke-width="6" stroke-linecap="round"/>
+    <path d="M12 20a45 45 0 0 1 64 0" fill="none" stroke="#4EA1FF" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="44" cy="34" r="5" fill="#F2A900"/>
+  </g>
+  <text x="132" y="77" fill="#FFFFFF" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="700">LandmarkSignal</text>
+</svg>
