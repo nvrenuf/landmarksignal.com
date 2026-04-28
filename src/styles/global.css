@@ -196,6 +196,10 @@ dd {
   align-items: center;
 }
 
+.hero-layout-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .hero-copy {
   display: grid;
   gap: var(--space-lg);
@@ -380,6 +384,10 @@ h3 {
   gap: var(--space-lg);
 }
 
+.runtime-components-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .control-item,
 .product-item,
 .deployment-item {
@@ -470,6 +478,43 @@ h3 {
   background: rgba(255, 255, 255, 0.035);
 }
 
+.lifecycle-list {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lifecycle-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lifecycle-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(78, 161, 255, 0.35);
+  color: var(--blue-light);
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.lifecycle-list p {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
 .cta-section {
   padding-bottom: var(--space-4xl);
 }
@@ -529,6 +574,10 @@ h3 {
   .deployment-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .runtime-deployment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 58rem) {
@@ -556,6 +605,11 @@ h3 {
   .product-list,
   .deployment-grid,
   .threat-list {
+    grid-template-columns: 1fr;
+  }
+
+  .runtime-components-grid,
+  .runtime-deployment-grid {
     grid-template-columns: 1fr;
   }
 
