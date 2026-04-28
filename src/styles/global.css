@@ -206,12 +206,6 @@ dd {
   max-width: 43rem;
 }
 
-.hero-logo {
-  width: min(17rem, 72vw);
-  height: auto;
-  margin-bottom: var(--space-md);
-}
-
 .hero-kicker,
 .section-marker,
 .product-label {
