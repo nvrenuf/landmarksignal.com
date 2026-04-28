@@ -1,0 +1,259 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+const controls = [
+  "Model calls",
+  "Tool calls",
+  "Agent actions",
+  "Retrieval and data access",
+  "Policy decisions",
+  "Audit events"
+];
+
+const components = [
+  ["Policy Engine", "Evaluates policy inputs, constraints, and approval rules before execution."],
+  ["Tool Gateway", "Mediates tool invocation with allow/deny checks and scoped controls."],
+  ["Model Router", "Directs requests to approved models using policy and usage context."],
+  ["Identity & Tenant Controls", "Resolves identity and tenant context to support enterprise segmentation."],
+  ["Audit Layer", "Records decision paths, actions, and evidence trails for review."]
+];
+
+const lifecycle = [
+  "Request enters Runtime",
+  "Identity and tenant context resolved",
+  "Policy evaluated",
+  "Tool/model access mediated",
+  "Result returned",
+  "Audit trace recorded"
+];
+
+const threats = [
+  "Prompt injection",
+  "Data exfiltration",
+  "Tool misuse",
+  "Agent privilege escalation",
+  "Unsafe model routing",
+  "Missing audit evidence",
+  "Shadow AI visibility gaps",
+  "RAG data leakage"
+];
+
+const deployments = [
+  ["Local / self-hosted", "Deployment pattern for organizations that require control near sensitive systems and data boundaries."],
+  ["Private cloud", "Built to support private cloud environments where enterprise teams manage network and security controls."],
+  ["Hybrid", "Designed to support hybrid patterns that coordinate internal controls with approved external AI services."],
+  ["Air-gapped roadmap", "Air-gapped deployment support may be addressed through a roadmap path for high-isolation environments."]
+];
+
+const notRuntime = [
+  "Not an LLM",
+  "Not just an inference server",
+  "Not just an agent framework",
+  "Not a generic dashboard",
+  "Not a replacement for IAM, SIEM, or DLP; Runtime is designed to integrate with enterprise security systems over time"
+];
+---
+
+<BaseLayout
+  title="LandmarkSignal Runtime"
+  description="LandmarkSignal Runtime is the control plane for enterprise AI operations."
+>
+  <SiteHeader />
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="hero-kicker">LandmarkSignal Runtime</p>
+          <h1>The control plane for enterprise AI operations.</h1>
+          <p class="hero-body">
+            LandmarkSignal Runtime is the control plane for enterprise AI — giving security teams visibility,
+            policy enforcement, and audit evidence across models, agents, tools, and AI workflows.
+          </p>
+          <p class="hero-body">
+            Runtime sits between users, agents, models, tools, and enterprise data to enforce policy, control tool
+            calls, route model usage, and produce audit evidence.
+          </p>
+        </div>
+
+        <aside class="runtime-panel" aria-label="Representative runtime event panel">
+          <div class="panel-topline">
+            <img src="/brand/landmarksignal-icon-light.svg" alt="" aria-hidden="true" />
+            <div>
+              <p>Representative event</p>
+              <span>Example trace (non-live)</span>
+            </div>
+          </div>
+          <dl class="event-details">
+            <div>
+              <dt>User</dt>
+              <dd>security.architect@enterprise.com</dd>
+            </div>
+            <div>
+              <dt>Agent</dt>
+              <dd>Vendor risk assistant</dd>
+            </div>
+            <div>
+              <dt>Policy verdict</dt>
+              <dd><span class="verdict">Allowed</span> with tenant scope + redaction policy</dd>
+            </div>
+            <div>
+              <dt>Tool call</dt>
+              <dd>ticketing.lookup_change_request</dd>
+            </div>
+            <div>
+              <dt>Model route</dt>
+              <dd>approved-enterprise-model-v2</dd>
+            </div>
+            <div>
+              <dt>Trace ID</dt>
+              <dd>lsig_trace_a91d8bf4</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="runtime-controls">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <p class="section-marker">What Runtime controls</p>
+          <h2>Control points across AI requests, tools, data, and evidence.</h2>
+        </div>
+        <ul class="threat-list">
+          {controls.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="runtime-architecture">
+      <div class="container">
+        <div class="section-intro architecture-intro">
+          <p class="section-marker">Where Runtime sits</p>
+          <h2>Runtime between enterprise demand and AI execution paths.</h2>
+        </div>
+        <div class="architecture-strip" aria-label="Runtime architecture strip">
+          <div>
+            <span>Users / Agents / Workflows</span>
+            <p>Business requests, delegated actions, and automation flows.</p>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <div class="runtime-node">
+            <span>LandmarkSignal Runtime</span>
+            <p>Policy enforcement, access mediation, model routing, and audit trace logic.</p>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <div>
+            <span>Models / Tools / Data</span>
+            <p>Approved inference targets, enterprise tools, and governed retrieval sources.</p>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <div>
+            <span>Audit / SIEM / Evidence destinations</span>
+            <p>Destinations Runtime is designed to support through integration pathways over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="runtime-components">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Core runtime components</p>
+          <h2>Built to separate control responsibilities clearly.</h2>
+        </div>
+        <div class="product-list runtime-components-grid">
+          {components.map(([title, body]) => (
+            <article class="product-item">
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="runtime-lifecycle">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <p class="section-marker">Request lifecycle</p>
+          <h2>How a request is processed through Runtime.</h2>
+        </div>
+        <ol class="lifecycle-list">
+          {lifecycle.map((step, index) => (
+            <li>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <p>{step}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="runtime-threats">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <p class="section-marker">Threats addressed</p>
+          <h2>Key enterprise AI risks Runtime is designed to address.</h2>
+        </div>
+        <ul class="threat-list">
+          {threats.map((threat) => <li>{threat}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="runtime-deployment">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Deployment patterns</p>
+          <h2>Deployment options aligned to enterprise control requirements.</h2>
+        </div>
+        <div class="deployment-grid runtime-deployment-grid">
+          {deployments.map(([title, body]) => (
+            <article class="deployment-item">
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="runtime-not">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <p class="section-marker">What Runtime is not</p>
+          <h2>Clear boundaries for where Runtime fits.</h2>
+        </div>
+        <ul class="threat-list">
+          {notRuntime.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="runtime-briefing">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-marker">Briefing</p>
+          <h2>Discuss Runtime alignment with your security and governance goals.</h2>
+        </div>
+        <div class="cta-copy">
+          <p>
+            Schedule a focused session to map Runtime controls to your current model usage, agent tooling,
+            and evidence expectations.
+          </p>
+          <a
+            class="button button-primary"
+            href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Runtime%20Briefing"
+          >
+            Request a Runtime briefing
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
