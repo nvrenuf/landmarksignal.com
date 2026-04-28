@@ -281,11 +281,6 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
-.panel-topline img {
-  width: 3rem;
-  height: 3rem;
-}
-
 .panel-topline p {
   color: var(--text-strong);
   font-family: "Archivo", sans-serif;
