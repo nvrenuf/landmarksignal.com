@@ -2,241 +2,65 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+
+const productLanes = [
+  ["LandmarkSignal Radar", "Visibility / intelligence", "Radar sees AI activity and operational signals so security teams can understand what is happening across models, agents, and workflows."],
+  ["LandmarkSignal Shield", "Enforcement / controls", "Shield controls policy, tool use, model routing, and data access so approved actions can proceed and risky actions can be constrained."],
+  ["LandmarkSignal Audit", "Evidence / traceability", "Audit proves what happened with traceable evidence designed to support enterprise security, governance, and compliance reviews."]
+];
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="LandmarkSignal | Secure AI Operations"
+  description="LandmarkSignal is a trusted intelligence platform company for secure AI operations. See every AI action, control every tool call, and prove every decision."
+>
   <SiteHeader />
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-layout">
-        <div class="hero-intro">
-          <p class="hero-kicker">Trusted intelligence platform company</p>
-          <h1>Trusted intelligence for secure AI operations</h1>
-        </div>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="hero-body">
-              LandmarkSignal helps enterprises operationalize AI with the governance,
-              control, and auditability required in security-conscious environments.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#briefing">Request a Briefing</a>
-              <a class="button button-secondary" href="#platform">Explore Runtime</a>
-            </div>
-          </div>
-          <aside class="hero-panel" aria-label="Platform overview">
-            <p class="panel-label">Built for executive evaluation</p>
-            <div class="hero-panel-list">
-              <div class="hero-panel-row">
-                <span class="hero-panel-term">Audience</span>
-                <p>Security, risk, compliance, and technical leadership.</p>
-              </div>
-              <div class="hero-panel-row">
-                <span class="hero-panel-term">Focus</span>
-                <p>Governed AI operations, secure tool access, and trusted decision support.</p>
-              </div>
-              <div class="hero-panel-row">
-                <span class="hero-panel-term">Next step</span>
-                <p>A focused briefing on platform structure, Runtime, and product direction.</p>
-              </div>
-            </div>
-          </aside>
-        </div>
-        <div class="hero-rail" aria-label="Key platform outcomes">
-          <div class="hero-rail-item">
-            <span>Governed runtime control</span>
-            <p>Operational structure for enterprise AI deployment and use.</p>
-          </div>
-          <div class="hero-rail-item">
-            <span>Secure tool access and routing</span>
-            <p>Clear boundaries around permissions, invocation paths, and system access.</p>
-          </div>
-          <div class="hero-rail-item">
-            <span>Auditability for oversight-heavy environments</span>
-            <p>Reviewable activity, decisions, and access records for accountable operation.</p>
+      <div class="container hero-layout hero-layout-single">
+        <div class="hero-copy">
+          <img class="hero-logo" src="/brand/landmarksignal-logo-light.svg" alt="LandmarkSignal" />
+          <p class="hero-kicker">Trusted intelligence platform company for secure AI operations</p>
+          <h1>See every AI action. Control every tool call. Prove every decision.</h1>
+          <p class="hero-body">
+            Enterprises are adopting models, agents, tools, and AI workflows faster than security teams can
+            see, control, and prove what happened. LandmarkSignal Runtime is the enterprise AI control plane
+            designed to close that gap.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/runtime">Explore LandmarkSignal Runtime</a>
+            <a
+              class="button button-secondary"
+              href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Platform%20Briefing"
+            >
+              Request a briefing
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section relationship-section" id="company">
-      <div class="container">
-        <div class="section-intro relationship-intro">
-          <p class="section-marker">Structure</p>
-          <h2>LandmarkSignal, Runtime, and the product family</h2>
-          <p class="section-lead">
-            The company, platform, and products serve different roles. The homepage should
-            make that relationship understandable at a glance.
-          </p>
-        </div>
-        <div class="relationship-frame" aria-label="Relationship between company, platform, and products">
-          <article class="relationship-step relationship-step-company">
-            <p class="step-label">Company</p>
-            <h3>LandmarkSignal</h3>
-            <p>
-              The company and platform identity focused on secure AI operations and trusted
-              decision support for enterprise environments.
-            </p>
-          </article>
-          <article class="relationship-bridge" aria-hidden="true">
-            <span></span>
-            <span></span>
-          </article>
-          <article class="relationship-step relationship-step-runtime">
-            <p class="step-label">Foundation</p>
-            <h3>LandmarkSignal Runtime</h3>
-            <p>
-              The operational runtime layer that governs how AI systems are deployed,
-              routed, accessed, and observed.
-            </p>
-          </article>
-          <article class="relationship-step relationship-step-products">
-            <p class="step-label">Products</p>
-            <h3>Radar, Shield, and Audit</h3>
-            <p>
-              Purpose-built capabilities for monitoring, protection, and review built on
-              top of Runtime.
-            </p>
-          </article>
-        </div>
-        <div class="relationship-summary">
-          <p>
-            This structure is deliberate: LandmarkSignal is the company and platform
-            identity, Runtime is the operational foundation, and the products extend that
-            foundation into specific enterprise use.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="platform">
+    <section class="section section-accent" id="platform">
       <div class="container section-grid">
         <div class="section-heading">
           <p class="section-marker">Platform</p>
-          <h2>LandmarkSignal Runtime</h2>
+          <h2>LandmarkSignal Runtime is the enterprise AI control plane.</h2>
         </div>
-        <div class="section-content">
-          <p>
-            LandmarkSignal Runtime is the operational foundation for governed enterprise
-            AI.
-          </p>
-          <div class="runtime-list" role="list" aria-label="Runtime responsibilities">
-            <div class="runtime-item" role="listitem">
-              <p class="runtime-label">Control</p>
-              <h3>Govern policy and permissions</h3>
-              <p>
-                Apply operational rules around who can access AI systems, tools, and
-                workflows.
-              </p>
-            </div>
-            <div class="runtime-item" role="listitem">
-              <p class="runtime-label">Access</p>
-              <h3>Control routing and tool access</h3>
-              <p>
-                Manage how models, tools, and internal systems are invoked across governed
-                environments.
-              </p>
-            </div>
-            <div class="runtime-item" role="listitem">
-              <p class="runtime-label">Oversight</p>
-              <h3>Maintain auditability</h3>
-              <p>
-                Preserve a reviewable record of decisions, actions, and access for
-                oversight-heavy organizations.
-              </p>
-            </div>
-          </div>
-          <p class="section-note">
-            Rather than treating AI as an isolated interface, Runtime treats it as an
-            operational system that must be governed, observable, and accountable.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-accent" id="problem">
-      <div class="container section-grid">
-        <div class="section-heading">
-          <p class="section-marker">Problem framing</p>
-          <h2>Secure AI adoption depends on operational discipline</h2>
-        </div>
-        <div class="section-content">
-          <p>
-            Enterprise AI cannot be treated as a standalone interface or a lightweight
-            experimentation layer. In governed environments, adoption depends on policy,
-            permissions, routing, auditability, and secure deployment working together.
-          </p>
-          <ul class="problem-list">
-            <li>Security teams need operational control, not informal usage.</li>
-            <li>Compliance and risk teams need reviewable system behavior.</li>
-            <li>Technical leaders need a credible path to controlled adoption.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="capabilities">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Capability pillars</p>
-          <h2>Core operating requirements for governed AI</h2>
-        </div>
-        <div class="pillar-grid">
-          <article class="pillar">
-            <p class="pillar-label">Operations</p>
-            <h3>Secure AI operations</h3>
-            <p>Operational structure for AI systems deployed in real enterprise workflows.</p>
+        <div class="control-list">
+          <article class="control-item">
+            <h3>Company positioning</h3>
+            <p>
+              LandmarkSignal is a trusted intelligence platform company focused on secure AI operations for CISOs,
+              CTOs, security architects, governance owners, and compliance stakeholders.
+            </p>
           </article>
-          <article class="pillar">
-            <p class="pillar-label">Governance</p>
-            <h3>Governance and policy control</h3>
-            <p>Policy-aware operation with clear permissions, routing, and access boundaries.</p>
-          </article>
-          <article class="pillar">
-            <p class="pillar-label">Deployment</p>
-            <h3>Private and local deployment</h3>
-            <p>Support for organizations that require stronger control over where AI runs.</p>
-          </article>
-          <article class="pillar">
-            <p class="pillar-label">Assurance</p>
-            <h3>Auditability and decision support</h3>
-            <p>Reviewable records and trusted system behavior for high-scrutiny environments.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section stakeholder-section" id="use-cases">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Enterprise buyers</p>
-          <h2>Built for teams responsible for secure adoption</h2>
-          <p class="section-lead">
-            Different stakeholders evaluate AI adoption through different lenses. The
-            platform should make that relevance explicit.
-          </p>
-        </div>
-        <div class="stakeholder-grid">
-          <article class="stakeholder-item">
-            <p class="stakeholder-label">Security</p>
-            <h3>CISOs and security leaders</h3>
-            <p>Need permissions, tool controls, auditability, and operational boundaries.</p>
-          </article>
-          <article class="stakeholder-item">
-            <p class="stakeholder-label">Technology</p>
-            <h3>CIOs and CTOs</h3>
-            <p>Need a credible operating model for AI that fits enterprise systems.</p>
-          </article>
-          <article class="stakeholder-item">
-            <p class="stakeholder-label">Governance</p>
-            <h3>Compliance and risk leaders</h3>
-            <p>Need traceability, reviewable actions, and stronger governance posture.</p>
-          </article>
-          <article class="stakeholder-item">
-            <p class="stakeholder-label">Implementation</p>
-            <h3>Technical buyers</h3>
-            <p>Need runtime control, routing clarity, and secure access to tools and models.</p>
+          <article class="control-item">
+            <h3>What the platform does</h3>
+            <p>
+              Runtime sits between users, agents, models, tools, and enterprise data to provide visibility, policy
+              enforcement, and traceable evidence.
+            </p>
           </article>
         </div>
       </div>
@@ -245,85 +69,33 @@ import SiteHeader from "../components/SiteHeader.astro";
     <section class="section" id="products">
       <div class="container">
         <div class="section-intro">
-          <p class="section-marker">Products</p>
-          <h2>Purpose-built capabilities on top of Runtime</h2>
+          <p class="section-marker">Product family</p>
+          <h2>Three product lanes on one control plane.</h2>
         </div>
         <div class="product-list">
-          <article class="product-item">
-            <h3>LandmarkSignal Radar</h3>
-            <p>
-              LandmarkSignal Radar provides visibility into AI activity, system behavior,
-              and operational signals across governed environments. It is designed to help
-              teams monitor how AI systems are being used and where attention is required.
-            </p>
-          </article>
-          <article class="product-item">
-            <h3>LandmarkSignal Shield</h3>
-            <p>
-              LandmarkSignal Shield applies protective controls around AI use, including
-              policy enforcement, permissions, and secure tool access. It is intended for
-              organizations that need stronger operational safeguards as AI systems move
-              into real workflows.
-            </p>
-          </article>
-          <article class="product-item">
-            <h3>LandmarkSignal Audit</h3>
-            <p>
-              LandmarkSignal Audit creates a reviewable record of AI activity, access, and
-              decisions to support internal accountability and external scrutiny. It is
-              built for environments where auditability and defensible oversight are
-              essential.
-            </p>
-          </article>
+          {productLanes.map(([name, label, body]) => (
+            <article class="product-item">
+              <p class="product-label">{label}</p>
+              <h3>{name}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
 
-    <section class="section" id="trust">
-      <div class="container section-grid">
-        <div class="section-heading">
-          <p class="section-marker">Operating principles</p>
-          <h2>Built for governed AI operations</h2>
-        </div>
-        <div class="section-content">
-          <p>
-            LandmarkSignal is built around a simple operating philosophy: enterprise AI
-            must be governed, securely deployed, auditable, and operationally controlled.
-          </p>
-          <div class="principle-list">
-            <p>Policy-aware operation with secure access to tools and systems.</p>
-            <p>Clear accountability for actions taken across AI workflows.</p>
-            <p>Trusted decision support for environments where oversight matters.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section" id="briefing">
+    <section class="section cta-section" id="next-step">
       <div class="container cta-inner">
         <div>
-          <p class="section-marker">Briefing</p>
-          <h2>Start with a briefing</h2>
+          <p class="section-marker">Next step</p>
+          <h2>Go deeper on Runtime architecture, controls, and deployment patterns.</h2>
         </div>
         <div class="cta-copy">
           <p>
-            If you are evaluating secure AI adoption, LandmarkSignal can provide a focused
-            briefing on the platform, Runtime, and product direction.
+            Review how Runtime is designed to control model calls, mediate tool access, enforce policy decisions,
+            and record representative audit traces across enterprise AI workflows.
           </p>
-          <p>
-            This is intended for enterprise and mid-market leaders assessing whether the
-            approach fits their operating, governance, and security requirements.
-          </p>
-          <p class="cta-note">
-            Early conversations are handled directly. Use the briefing path to begin an
-            executive discussion.
-          </p>
-          <a
-            class="button button-primary"
-            href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Briefing"
-          >
-            Request a Briefing
-          </a>
+          <a class="button button-primary" href="/runtime">Go to /runtime</a>
         </div>
       </div>
     </section>
