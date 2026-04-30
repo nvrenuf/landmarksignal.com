@@ -6,10 +6,16 @@
 
     <nav class="site-nav" aria-label="Primary">
       <a href="/runtime">Runtime</a>
-      <a href="/#products">Products</a>
-      <a href="/radar">Radar</a>
-      <a href="/shield">Shield</a>
-      <a href="/audit">Audit</a>
+
+      <div class="nav-dropdown">
+        <a href="/radar" class="nav-dropdown-trigger" aria-haspopup="true">Products</a>
+        <div class="nav-dropdown-menu" role="menu" aria-label="Products">
+          <a role="menuitem" href="/radar">Radar</a>
+          <a role="menuitem" href="/shield">Shield</a>
+          <a role="menuitem" href="/audit">Audit</a>
+        </div>
+      </div>
+
       <a href="/#trust">Trust</a>
       <a href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Briefing">Contact</a>
     </nav>
