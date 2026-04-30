@@ -51,8 +51,41 @@ const offerings = [
             <a class="button button-secondary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Platform%20Briefing">Request a briefing</a>
           </div>
         </div>
-        <div class="signal-scene" aria-hidden="true">
-          <span class="signal-beam"></span>
+        <aside class="runtime-control-panel" aria-label="Runtime control plane workflow preview">
+          <div class="control-panel-header">
+            <p>Runtime control plane</p>
+            <span>Governed request lifecycle</span>
+          </div>
+          <ol class="control-flow" aria-label="Governed AI workflow">
+            <li>User Request</li>
+            <li>Policy Check</li>
+            <li>Model Route</li>
+            <li>Tool Access</li>
+            <li>Audit Trace</li>
+          </ol>
+          <dl class="control-event">
+            <div><dt>Actor</dt><dd>Security analyst</dd></div>
+            <div><dt>Policy</dt><dd>Customer data redaction required</dd></div>
+            <div><dt>Model route</dt><dd>Approved enterprise model</dd></div>
+            <div><dt>Tool access</dt><dd>Allowed with scoped permissions</dd></div>
+            <div><dt>Audit status</dt><dd class="verdict">Evidence recorded</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-runtime-controls" id="runtime-controls">
+      <div class="container">
+        <div class="section-intro runtime-controls-intro">
+          <p class="section-marker">Runtime controls</p>
+          <h2>Control the AI actions your business depends on.</h2>
+          <p>LandmarkSignal Runtime gives teams a governed path between users, agents, models, tools, and enterprise data — with policy checks and audit evidence built into every step. See which AI agent accessed data, what model handled the request, which tool was called, what policy allowed or blocked it, and what evidence was recorded.</p>
+        </div>
+        <div class="runtime-controls-grid">
+          <article class="runtime-control-card"><h3>Model routing</h3><p>Approved models only, selected by policy and context.</p></article>
+          <article class="runtime-control-card"><h3>Tool mediation</h3><p>Every tool call checked before execution.</p></article>
+          <article class="runtime-control-card"><h3>Data access</h3><p>Sensitive data paths constrained by tenant and policy.</p></article>
+          <article class="runtime-control-card"><h3>Audit evidence</h3><p>Decisions, actions, and outcomes recorded for review.</p></article>
         </div>
       </div>
     </section>
@@ -97,12 +130,41 @@ const offerings = [
           <p class="section-marker">Architecture</p>
           <h2>LandmarkSignal Intelligence Architecture</h2>
         </div>
-        <div class="architecture-panel" aria-label="LandmarkSignal Intelligence Architecture">
-          <div>Sources</div><span>→</span>
-          <div>Ingest &amp; Normalize</div><span>→</span>
-          <div class="runtime-node">LandmarkSignal Runtime</div><span>→</span>
-          <div>Intelligence Layer</div><span>→</span>
-          <div>Outcomes</div>
+        <div class="architecture-panel" aria-label="LandmarkSignal control plane architecture">
+          <article class="architecture-column">
+            <h3>Sources</h3>
+            <ul>
+              <li>Enterprise data</li>
+              <li>Applications</li>
+              <li>External signals</li>
+            </ul>
+          </article>
+          <article class="architecture-column architecture-column-runtime">
+            <h3>Runtime</h3>
+            <ul>
+              <li>Identity</li>
+              <li>Policy</li>
+              <li>Model routing</li>
+              <li>Tool gateway</li>
+              <li>Audit log</li>
+            </ul>
+          </article>
+          <article class="architecture-column">
+            <h3>Products</h3>
+            <ul>
+              <li>Radar</li>
+              <li>Shield</li>
+              <li>Audit</li>
+            </ul>
+          </article>
+          <article class="architecture-column">
+            <h3>Outcomes</h3>
+            <ul>
+              <li>Decision-ready intelligence</li>
+              <li>Enforced controls</li>
+              <li>Compliance evidence</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
