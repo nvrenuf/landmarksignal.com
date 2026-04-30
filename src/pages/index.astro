@@ -43,8 +43,11 @@ const offerings = [
     <section class="hero hero-home">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <p class="hero-kicker">LandmarkSignal Platform</p>
-          <h1>Trusted intelligence for secure AI operations</h1>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Governed AI Intelligence Platform
+          </div>
+          <h1>Trusted intelligence for <span class="hero-gradient-text">secure AI operations</span></h1>
           <p class="hero-body">LandmarkSignal turns noisy data and AI workflows into governed, auditable intelligence — so security, risk, and operations leaders can move with confidence.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="/runtime">Explore the platform</a>
@@ -108,10 +111,30 @@ const offerings = [
           <p>LandmarkSignal Runtime gives teams a governed path between users, agents, models, tools, and enterprise data — with policy checks and audit evidence built into every step. See which AI agent accessed data, what model handled the request, which tool was called, what policy allowed or blocked it, and what evidence was recorded.</p>
         </div>
         <div class="runtime-controls-grid">
-          <article class="runtime-control-card"><h3>Model routing</h3><p>Approved models only, selected by policy and context.</p></article>
-          <article class="runtime-control-card"><h3>Tool mediation</h3><p>Every tool call checked before execution.</p></article>
-          <article class="runtime-control-card"><h3>Data access</h3><p>Sensitive data paths constrained by tenant and policy.</p></article>
-          <article class="runtime-control-card"><h3>Audit evidence</h3><p>Decisions, actions, and outcomes recorded for review.</p></article>
+          <article class="runtime-control-card">
+            <div class="control-card-icon icon-blue">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1"/></svg>
+            </div>
+            <h3>Model routing</h3><p>Approved models only, selected by policy and context.</p>
+          </article>
+          <article class="runtime-control-card">
+            <div class="control-card-icon icon-purple">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5L12 4v4c0 2.5-2.2 4.3-5 5-2.8-.7-5-2.5-5-5V4l5-2.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Tool mediation</h3><p>Every tool call checked before execution.</p>
+          </article>
+          <article class="runtime-control-card">
+            <div class="control-card-icon icon-teal">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M4 7h6M4 4.5h3M4 9.5h4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Data access</h3><p>Sensitive data paths constrained by tenant and policy.</p>
+          </article>
+          <article class="runtime-control-card">
+            <div class="control-card-icon icon-amber">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5h8M3 7.5h5M3 10h7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><rect x="1" y="1.5" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1"/></svg>
+            </div>
+            <h3>Audit evidence</h3><p>Decisions, actions, and outcomes recorded for review.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -197,9 +220,13 @@ const offerings = [
 
     <section class="trusted-strip">
       <div class="container trusted-inner">
-        <p>Trusted by organizations that operate in high-stakes environments.</p>
+        <p>Trusted in high-stakes environments</p>
         <ul>
-          <li>National Security</li><li>Critical Infrastructure</li><li>Financial Services</li><li>Healthcare</li><li>Technology</li>
+          <li>National Security</li>
+          <li>Critical Infrastructure</li>
+          <li>Financial Services</li>
+          <li>Healthcare</li>
+          <li>Technology</li>
         </ul>
       </div>
     </section>
