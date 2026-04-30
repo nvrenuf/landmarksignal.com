@@ -51,25 +51,51 @@ const offerings = [
             <a class="button button-secondary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Platform%20Briefing">Request a briefing</a>
           </div>
         </div>
-        <aside class="runtime-control-panel" aria-label="Runtime control plane workflow preview">
-          <div class="control-panel-header">
-            <p>Runtime control plane</p>
-            <span>Governed request lifecycle</span>
+        <aside class="runtime-architecture-hero" aria-label="Runtime architecture overview">
+          <div class="architecture-lane lane-inputs">
+            <p class="lane-title">Inputs</p>
+            <ul>
+              <li>User / Agent Request</li>
+              <li>Enterprise Data</li>
+              <li>Tool Request</li>
+              <li>External Signals</li>
+            </ul>
           </div>
-          <ol class="control-flow" aria-label="Governed AI workflow">
-            <li>User Request</li>
-            <li>Policy Check</li>
-            <li>Model Route</li>
-            <li>Tool Access</li>
-            <li>Audit Trace</li>
-          </ol>
-          <dl class="control-event">
-            <div><dt>Actor</dt><dd>Security analyst</dd></div>
-            <div><dt>Policy</dt><dd>Customer data redaction required</dd></div>
-            <div><dt>Model route</dt><dd>Approved enterprise model</dd></div>
-            <div><dt>Tool access</dt><dd>Allowed with scoped permissions</dd></div>
-            <div><dt>Audit status</dt><dd class="verdict">Evidence recorded</dd></div>
-          </dl>
+
+          <div class="runtime-core">
+            <p class="runtime-core-kicker">LandmarkSignal Runtime</p>
+            <div class="runtime-core-grid">
+              <span>Identity</span>
+              <span>Policy</span>
+              <span>Model Router</span>
+              <span>Tool Gateway</span>
+              <span>Audit Log</span>
+            </div>
+          </div>
+
+          <div class="architecture-lane lane-outcomes">
+            <p class="lane-title">Outcomes</p>
+            <ul>
+              <li>Radar</li>
+              <li>Shield</li>
+              <li>Audit</li>
+              <li>Executive View</li>
+            </ul>
+          </div>
+
+          <div class="audit-trace-strip">
+            <p>Audit trace</p>
+            <ol>
+              <li>Actor</li>
+              <li>Policy verdict</li>
+              <li>Model route</li>
+              <li>Tool decision</li>
+              <li>Evidence record</li>
+            </ol>
+            <div class="status-chips" aria-label="runtime status">
+              <span>ALLOW</span><span>REDACT</span><span>LOGGED</span>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
