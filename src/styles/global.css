@@ -711,20 +711,10 @@ h3 {
   right: -4%;
   top: 40%;
   height: 5.5rem;
-  background: linear-gradient(90deg, rgba(140, 185, 240, 0.3), rgba(140, 185, 240, 0.04));
+  background: linear-gradient(90deg, rgba(140, 185, 240, 0.2), rgba(140, 185, 240, 0.03));
   filter: blur(1px);
 }
 
-.signal-core {
-  position: absolute;
-  top: 37%;
-  left: 42%;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 999px;
-  background: rgba(194, 221, 255, 0.86);
-  box-shadow: 0 0 0 10px rgba(140, 185, 240, 0.16);
-}
 
 .offering-grid,
 .trust-grid {
@@ -882,4 +872,11 @@ h3 {
     box-shadow: none;
     background: rgba(255, 255, 255, 0.02);
   }
+}
+
+
+.hero-home h1 {
+  max-width: 16ch;
+  font-size: clamp(3.1rem, 6.5vw, 5.6rem);
+  line-height: 1;
 }
