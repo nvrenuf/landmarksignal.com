@@ -96,7 +96,7 @@ dd {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-lg);
-  padding: var(--space-md) 0;
+  padding: 1.05rem 0;
 }
 
 .brand-mark,
@@ -105,9 +105,13 @@ dd {
   align-items: center;
 }
 
+.brand-mark {
+  padding: 0.2rem 0.15rem;
+}
+
 .brand-mark img {
   display: block;
-  width: 12.75rem;
+  width: 13.9rem;
   height: auto;
 }
 
@@ -191,8 +195,8 @@ dd {
 .hero-layout {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.03fr) minmax(22rem, 0.97fr);
-  gap: clamp(2.5rem, 6vw, 5.5rem);
+  grid-template-columns: minmax(0, 0.95fr) minmax(25rem, 1.05fr);
+  gap: clamp(2.25rem, 5vw, 4.5rem);
   align-items: center;
 }
 
@@ -619,7 +623,7 @@ h3 {
   }
 
   .brand-mark img {
-    width: min(12rem, 72vw);
+    width: min(13rem, 74vw);
   }
 
   .hero,
@@ -673,18 +677,18 @@ h3 {
 }
 
 .hero-home {
-  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-top: clamp(4.1rem, 7vw, 6.2rem);
 }
 
 .runtime-architecture-hero {
   display: grid;
-  grid-template-columns: minmax(9.5rem, 0.9fr) minmax(16rem, 1.3fr) minmax(8.5rem, 0.8fr);
+  grid-template-columns: minmax(10.5rem, 0.95fr) minmax(17.5rem, 1.4fr) minmax(9.5rem, 0.9fr);
   gap: var(--space-md);
-  padding: clamp(1rem, 2.6vw, 1.4rem);
+  padding: clamp(1.2rem, 3vw, 1.65rem);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015)), #0a1a2a;
-  box-shadow: 0 22px 75px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 28px 88px rgba(0, 0, 0, 0.36);
 }
 
 .architecture-lane,
@@ -692,7 +696,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.02);
-  padding: 0.75rem;
+  padding: 0.9rem;
 }
 
 .lane-title,
@@ -737,7 +741,7 @@ h3 {
 .runtime-core-grid span {
   display: grid;
   place-items: center;
-  min-height: 2.2rem;
+  min-height: 2.45rem;
   padding: 0.35rem;
   border: 1px solid rgba(141, 187, 245, 0.36);
   border-radius: 0.45rem;
@@ -759,7 +763,7 @@ h3 {
   gap: 0.6rem;
   align-items: center;
   border-top: 1px solid var(--line);
-  padding-top: 0.6rem;
+  padding-top: 0.75rem;
 }
 
 .audit-trace-strip p {
