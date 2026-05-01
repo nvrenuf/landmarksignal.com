@@ -1,0 +1,272 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+
+const introFlow = [
+  "User / Agent Request",
+  "Identity + Context",
+  "Policy Engine",
+  "Tool / Data / Model Controls",
+  "Workflow Execution",
+  "Audit + Operational Events"
+];
+
+const identityFields = [
+  "User",
+  "Agent",
+  "Tenant",
+  "Role",
+  "Purpose",
+  "Trace ID",
+  "Correlation ID"
+];
+
+const architectureSections = [
+  {
+    title: "Identity and context layer",
+    body:
+      "Captures user identity, agent identity, tenant, role, purpose, trace ID, correlation ID, and request context so actions can be attributed and reviewed.",
+    controls: identityFields
+  },
+  {
+    title: "Policy engine",
+    body:
+      "Evaluates subject, action, resource, tenant, and context before execution. Runtime is designed for default-deny behavior when access is missing, unclear, or invalid.",
+    controls: [
+      "Subject/action/resource decisions",
+      "Tenant-aware policy checks",
+      "Default-deny behavior",
+      "Policy decision records",
+      "Pre-execution enforcement"
+    ]
+  },
+  {
+    title: "Tool gateway",
+    body:
+      "Places high-risk tools behind controlled invocation. Agents do not receive unrestricted access to browsers, APIs, databases, cloud consoles, ticketing systems, scanners, SIEMs, code repositories, or file systems.",
+    controls: [
+      "Tool allowlists",
+      "Scope checks",
+      "Side-effect awareness",
+      "Tenant boundaries",
+      "Sanitized request/response handling",
+      "Tool invocation audit events"
+    ]
+  },
+  {
+    title: "Model registry and routing",
+    body:
+      "Controls which models are approved, when local or private models are required, and why a model was selected for a task.",
+    controls: [
+      "Approved model inventory",
+      "Local/private model routing",
+      "Hosted model restrictions",
+      "Task-specific model selection",
+      "Privacy-aware routing",
+      "Model decision logging"
+    ]
+  },
+  {
+    title: "Storage, memory, and RAG controls",
+    body:
+      "Governs how agents retrieve and use internal knowledge, documents, artifacts, vector stores, memory, compliance evidence, logs, and research notes.",
+    question:
+      "What knowledge is the agent allowed to retrieve, and what can it do with it?",
+    controls: [
+      "Document access boundaries",
+      "Vector store separation",
+      "Artifact storage contracts",
+      "Memory scope",
+      "Evidence retrieval trails",
+      "Tenant-aware storage"
+    ]
+  },
+  {
+    title: "Workflow and queue layer",
+    body:
+      "Supports longer-running governed jobs that should not run as uncontrolled chat sessions. Runtime can structure work through queues, job state, retries, workers, heartbeats, event flow, and failure handling.",
+    example:
+      "Reviewing hundreds of vendor questionnaires, collecting evidence, or running a multi-step security investigation should behave like a governed workflow, not an untracked prompt."
+  },
+  {
+    title: "Audit event layer",
+    body:
+      "Records meaningful governance events for security review, compliance, investigation, and accountability.",
+    controls: [
+      "User request",
+      "Agent action",
+      "Policy approval or denial",
+      "Tool invocation",
+      "Model selection",
+      "Document retrieval",
+      "Workflow start",
+      "Workflow completion",
+      "Failure",
+      "Admin configuration change"
+    ]
+  },
+  {
+    title: "Operational logging layer",
+    body:
+      "Keeps sanitized engineering logs separate from audit evidence. Operational logs help teams run the system; audit logs help teams prove what happened.",
+    controls: [
+      "Service readiness",
+      "Runtime errors",
+      "Gateway status",
+      "Worker status",
+      "Sanitized failure metadata",
+      "Health checks"
+    ]
+  },
+  {
+    title: "Tenant isolation",
+    body:
+      "Separates customers, departments, agents, data, tools, logs, vector stores, memory, and workflows. This is required for SaaS, internal enterprise deployments, and any environment where one group's AI work must not bleed into another's."
+  },
+  {
+    title: "Secure deployment model",
+    body:
+      "Runtime is designed for private and self-hosted deployment patterns where sensitive workflows can remain under organizational control.",
+    controls: [
+      "Self-hosted deployment path",
+      "Private cloud deployment path",
+      "Controlled secrets",
+      "Approved tools",
+      "Approved models",
+      "Containerized services",
+      "Sanitized logs",
+      "Private RAG",
+      "Enterprise integration boundaries"
+    ]
+  },
+  {
+    title: "Supply chain and model governance",
+    body:
+      "AI platforms create new supply-chain risk through models, tools, packages, plugins, prompts, adapters, and integrations. Runtime should support disciplined review of what is allowed into the environment.",
+    controls: [
+      "Approved package sources",
+      "Approved tool registry",
+      "Approved model sources",
+      "Model provenance review",
+      "Hash/checksum verification where applicable",
+      "Dependency review",
+      "Plugin/tool review",
+      "Blocked or restricted model families"
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Runtime Architecture | LandmarkSignal Runtime"
+  description="A technical view of how LandmarkSignal Runtime governs agents, models, tools, data access, workflows, tenant boundaries, and audit evidence."
+>
+  <SiteHeader />
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-layout hero-layout-single">
+        <div class="hero-copy runtime-architecture-copy">
+          <p class="hero-kicker">Technical architecture</p>
+          <h1>Runtime architecture for governed AI execution</h1>
+          <p class="hero-body">
+            A technical view of how LandmarkSignal Runtime controls agents, models, tools, data access,
+            workflow execution, tenant boundaries, and audit evidence across private AI deployments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture-intro">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Overview</p>
+          <h2>The control plane between AI intent and enterprise action</h2>
+        </div>
+        <div class="runtime-prose runtime-architecture-intro">
+          <p>
+            LandmarkSignal Runtime sits between users, agents, models, tools, data stores, and enterprise
+            systems. Its role is to evaluate whether an AI-driven action is allowed, which model or tool
+            may be used, what context applies, and what evidence must be recorded.
+          </p>
+        </div>
+        <ol class="runtime-flow runtime-flow-stacked" aria-label="Runtime architecture flow">
+          {introFlow.map((step, index) => (
+            <li>
+              <span>{step}</span>
+              {index < introFlow.length - 1 && <i aria-hidden="true">&rarr;</i>}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="architecture-components">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Architecture components</p>
+          <h2>Governance layers that shape how Runtime is designed to execute AI work</h2>
+        </div>
+        <div class="runtime-architecture-grid">
+          {architectureSections.map((section) => (
+            <article class="runtime-architecture-card">
+              <div class="runtime-architecture-card-head">
+                <h3>{section.title}</h3>
+              </div>
+              <p>{section.body}</p>
+              {section.question && (
+                <div class="runtime-callout">
+                  <p class="runtime-callout-label">Key question</p>
+                  <p>{section.question}</p>
+                </div>
+              )}
+              {section.example && (
+                <div class="runtime-callout">
+                  <p class="runtime-callout-label">Example</p>
+                  <p>{section.example}</p>
+                </div>
+              )}
+              {section.controls && (
+                <div class="runtime-architecture-card-foot">
+                  <p class="runtime-callout-label">
+                    {section.title === "Identity and context layer" ? "Key fields" : "Key controls"}
+                  </p>
+                  <ul class="runtime-chip-list">
+                    {section.controls.map((control) => <li>{control}</li>)}
+                  </ul>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="runtime-architecture-cta">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-marker">Technical CTA</p>
+          <h2>A runtime built for controlled AI adoption.</h2>
+        </div>
+        <div class="cta-copy">
+          <p>
+            LandmarkSignal Runtime gives organizations a foundation for adopting AI agents without
+            surrendering control over data, permissions, tools, models, workflows, or auditability.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="/runtime">Return to Runtime</a>
+            <a
+              class="button button-primary"
+              href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Runtime%20Briefing"
+            >
+              Request a briefing
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
