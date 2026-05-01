@@ -226,6 +226,11 @@ h3 { font-size: 1.18rem; line-height: 1.2; }
   color: var(--text-secondary);
   font-size: 1rem;
 }
+.runtime-section-copy {
+  max-width: 66ch;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
 
 /* ─── Trusted strip ─── */
 .trusted-strip { padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -390,6 +395,34 @@ h3 { font-size: 1.18rem; line-height: 1.2; }
   background: rgba(255,255,255,0.03);
 }
 .runtime-capability-card:hover { border-color: var(--border-accent); background: var(--bg-blue); }
+.runtime-audience-grid,
+.runtime-environment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: var(--space-lg);
+}
+.runtime-audience-card,
+.runtime-environment-card {
+  display: grid;
+  gap: var(--space-sm);
+  align-content: start;
+  min-height: 100%;
+  padding: var(--space-xl);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.runtime-audience-card:hover,
+.runtime-environment-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-blue);
+}
+.runtime-audience-card p,
+.runtime-environment-card p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
 .runtime-architecture-copy { max-width: 56rem; }
 .runtime-architecture-intro { margin-bottom: var(--space-lg); }
 .runtime-architecture-grid {
@@ -481,6 +514,7 @@ h3 { font-size: 1.18rem; line-height: 1.2; }
   .product-list, .deployment-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .runtime-deployment-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .runtime-capabilities-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .runtime-audience-grid, .runtime-environment-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .runtime-architecture-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 58rem) {
@@ -494,6 +528,7 @@ h3 { font-size: 1.18rem; line-height: 1.2; }
   .trust-grid, .runtime-controls-grid, .architecture-panel { grid-template-columns: 1fr; }
   .runtime-components-grid, .runtime-deployment-grid { grid-template-columns: 1fr; }
   .runtime-capabilities-grid { grid-template-columns: 1fr; }
+  .runtime-audience-grid, .runtime-environment-grid { grid-template-columns: 1fr; }
   .runtime-architecture-hero { grid-template-columns: 1fr; }
   .runtime-core-grid { grid-template-columns: 1fr; }
   .runtime-core-grid span:last-child { grid-column: auto; }
@@ -528,3 +563,36 @@ h3 { font-size: 1.18rem; line-height: 1.2; }
 /* ─── Homepage ─── */
 .hero-home { padding-top: clamp(4rem, 7vw, 6rem); }
 .hero-home h1 { max-width: 16ch; font-size: clamp(2.9rem, 6vw, 5.2rem); line-height: 0.98; }
+.homepage-runtime-teaser {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) auto;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
+.homepage-runtime-teaser-copy {
+  display: grid;
+  gap: var(--space-sm);
+}
+.homepage-runtime-teaser-copy p {
+  max-width: 64ch;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.homepage-runtime-teaser-actions {
+  display: grid;
+  gap: var(--space-sm);
+  justify-items: start;
+}
+
+@media (max-width: 58rem) {
+  .homepage-runtime-teaser {
+    grid-template-columns: 1fr;
+  }
+  .homepage-runtime-teaser-actions {
+    width: 100%;
+  }
+}
