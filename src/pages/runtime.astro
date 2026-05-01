@@ -46,6 +46,33 @@ const capabilities = [
   ]
 ];
 
+const audiences = [
+  [
+    "Cybersecurity and intelligence teams",
+    "Investigate threats, enrich OSINT, correlate signals, review logs, and support analyst workflows without giving agents uncontrolled access to tools or evidence."
+  ],
+  [
+    "Defense, public-sector, and mission-support organizations",
+    "Run sensitive AI workflows in controlled environments where model use, tool access, data boundaries, and audit trails must be governed."
+  ],
+  [
+    "MSSPs, MDR providers, and security consultancies",
+    "Use AI across investigations, assessments, reporting, and monitoring while keeping each client's data, tools, and evidence separated."
+  ],
+  [
+    "OSINT, investigative, and private intelligence teams",
+    "Support due diligence, fraud research, executive-risk reviews, and digital investigations with repeatable, source-aware, auditable workflows."
+  ],
+  [
+    "Critical infrastructure and operational security teams",
+    "Assist with incident review, policy search, security documentation, and threat intelligence without allowing uncontrolled interaction with operational systems."
+  ],
+  [
+    "Regulated and compliance-heavy organizations",
+    "Adopt AI across sensitive workflows while preserving access control, evidence, model governance, and auditability."
+  ]
+];
+
 const useCases = [
   "Cybersecurity investigation",
   "OSINT research",
@@ -175,6 +202,29 @@ const useCases = [
         <div class="product-list runtime-capabilities-grid">
           {capabilities.map(([title, body]) => (
             <article class="product-item runtime-capability-card">
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-accent" id="runtime-audiences">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Who Runtime is for</p>
+          <h2>Built for teams that cannot afford uncontrolled AI</h2>
+          <p class="runtime-section-copy">
+            LandmarkSignal Runtime is designed for organizations where AI cannot operate as an unmanaged
+            assistant. These teams need privacy, policy enforcement, controlled tool access, tenant
+            separation, model governance, and defensible audit evidence before AI agents can interact
+            with sensitive data or operational systems.
+          </p>
+        </div>
+        <div class="runtime-audience-grid">
+          {audiences.map(([title, body]) => (
+            <article class="runtime-audience-card">
               <h3>{title}</h3>
               <p>{body}</p>
             </article>

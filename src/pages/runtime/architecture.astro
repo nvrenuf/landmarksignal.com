@@ -156,6 +156,25 @@ const architectureSections = [
     ]
   }
 ];
+
+const deploymentEnvironments = [
+  [
+    "Private enterprise environment",
+    "For internal teams that need AI inside controlled infrastructure, with governed access to internal systems, documents, tools, and knowledge stores."
+  ],
+  [
+    "Multi-tenant service provider environment",
+    "For MSSPs, MDR providers, consultancies, and SaaS providers that need strict separation between customer data, tools, workflows, logs, memory, and evidence."
+  ],
+  [
+    "High-assurance mission environment",
+    "For defense, public-sector, investigative, critical infrastructure, and security-sensitive teams that require stronger control over models, tools, deployment, logging, and data movement."
+  ],
+  [
+    "Regulated workflow environment",
+    "For financial, healthcare, legal, compliance, and enterprise risk teams that need policy enforcement, audit trails, and defensible AI usage records."
+  ]
+];
 ---
 
 <BaseLayout
@@ -237,6 +256,28 @@ const architectureSections = [
                   </ul>
                 </div>
               )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="runtime-deployment-environments">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-marker">Deployment environments</p>
+          <h2>Deployment environments Runtime is designed for</h2>
+          <p class="runtime-section-copy">
+            Different organizations need different levels of isolation, control, and auditability.
+            Runtime is designed to support governed AI patterns across private enterprise,
+            service-provider, mission-support, and regulated workflow environments.
+          </p>
+        </div>
+        <div class="runtime-environment-grid">
+          {deploymentEnvironments.map(([title, body]) => (
+            <article class="runtime-environment-card">
+              <h3>{title}</h3>
+              <p>{body}</p>
             </article>
           ))}
         </div>
