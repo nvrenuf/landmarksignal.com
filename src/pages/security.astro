@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+---
+<BaseLayout title="Security and Trust | LandmarkSignal" description="Built for high-trust AI operations.">
+  <SiteHeader />
+  <main>
+    <section class="hero">
+      <div class="container hero-layout hero-layout-single">
+        <div class="hero-copy">
+          <p class="hero-kicker">Security and Trust</p>
+          <h1>Built for high-trust AI operations.</h1>
+          <p class="hero-body">LandmarkSignal is designed around explicit trust boundaries, controlled execution paths, and auditable AI operations for environments where unmanaged automation is unacceptable.</p>
+          <div class="hero-actions"><a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Security%20Briefing">Request a Briefing</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-accent"><div class="container"><div class="section-intro"><p class="section-marker">Security posture</p><h2>Core security principles</h2></div><div class="product-list"><article class="product-item"><h3>Fail closed</h3><p>When policy or identity context is missing, actions are designed to stop rather than proceed.</p></article><article class="product-item"><h3>Least privilege</h3><p>Access scopes are designed to be explicit and minimally permissive for users, agents, and workflows.</p></article><article class="product-item"><h3>Tenant isolation</h3><p>Runtime boundaries are designed to separate tenant context, data access, and control decisions.</p></article><article class="product-item"><h3>Model-agnostic routing</h3><p>Model usage is designed to follow approved policy pathways instead of hard-coded provider lock-in.</p></article><article class="product-item"><h3>Full audit trail</h3><p>Meaningful decisions and actions are designed to be recorded for traceability and review.</p></article><article class="product-item"><h3>Explicit trust boundaries</h3><p>Workflows are designed so model, tool, and data boundaries are clear and enforceable.</p></article></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Deployment model</p><h2>Designed to support enterprise deployment requirements</h2></div><div class="runtime-prose"><p>LandmarkSignal is designed to support local/self-hosted, private cloud, and hybrid deployment patterns depending on mission, compliance, and operational constraints.</p><p>Some deployment options and hardening patterns may be delivered through roadmap phases aligned to customer environments.</p></div></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Data handling</p><h2>Data flow and boundary design</h2></div><div class="runtime-prose"><p>Data paths are designed to follow governed boundaries from request intake to policy evaluation, model routing, tool access, and evidence capture.</p><p>Encryption in transit and encryption at rest are designed as baseline expectations, with retention behavior designed to be configurable by deployment context.</p><p>Tenant-scoped handling is designed to reduce cross-tenant exposure and support high-trust operating models.</p></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Trust roadmap</p><h2>Trust principles and integration roadmap</h2></div><div class="runtime-prose"><p>LandmarkSignal is built to support integration with enterprise governance and assurance workflows, including security review, risk assessment, and control evidence processes.</p><p>Certification alignment and framework-specific artifacts are roadmap topics and should be scoped per deployment rather than assumed as current attestations.</p></div></div></section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
