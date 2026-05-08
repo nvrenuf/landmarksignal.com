@@ -8,9 +8,10 @@ import SiteHeader from "../components/SiteHeader.astro";
   <SiteHeader />
 
   <main>
-    <section class="hero hero-home hero-light">
+    <section class="hero hero-home hero-enterprise">
       <div class="container hero-layout">
         <div class="hero-copy">
+          <p class="hero-kicker">LandmarkSignal Runtime</p>
           <h1>Intelligence you can trust. Decisions you can defend.</h1>
           <p class="hero-body">LandmarkSignal helps security and governance teams see, control, and prove enterprise AI activity across models, agents, tools, and workflows.</p>
           <div class="hero-actions">
@@ -18,11 +19,25 @@ import SiteHeader from "../components/SiteHeader.astro";
             <a class="button button-secondary" href="/runtime">Explore Runtime</a>
           </div>
         </div>
-        <aside class="hero-abstract" aria-label="LandmarkSignal platform overview visual">
-          <div class="abstract-node">Identity & Tenant Scope</div>
-          <div class="abstract-node">Policy & Tool Controls</div>
-          <div class="abstract-node">Model Routing</div>
-          <div class="abstract-node">Evidence Trace</div>
+        <aside class="hero-runtime-panel" aria-label="Runtime decision and evidence panel">
+          <div class="runtime-panel-header">
+            <p>Runtime Decision Panel</p>
+            <span class="runtime-status">Policy Active</span>
+          </div>
+          <div class="runtime-panel-grid">
+            <p><span>Actor</span><strong>Finance Agent</strong></p>
+            <p><span>Model Route</span><strong>Approved LLM Pool</strong></p>
+            <p><span>Tool Request</span><strong>CRM Query</strong></p>
+            <p><span>Data Scope</span><strong>Tenant-Scoped</strong></p>
+          </div>
+          <div class="runtime-verdict-strip">
+            <span class="verdict allow">ALLOW</span>
+            <span class="verdict check">CONSTRAIN</span>
+            <span class="verdict log">EVIDENCE LOGGED</span>
+          </div>
+          <ol class="runtime-evidence-trace">
+            <li>Identity verified</li><li>Policy evaluated</li><li>Model routed</li><li>Tool constrained</li><li>Trace recorded</li>
+          </ol>
         </aside>
       </div>
     </section>
@@ -35,24 +50,33 @@ import SiteHeader from "../components/SiteHeader.astro";
       </div>
     </section>
 
-    <section class="section" id="products">
+    <section class="section platform-section" id="products">
       <div class="container">
         <div class="section-intro section-intro-centered">
           <h2>Secure AI operations without blind spots.</h2>
           <p>LandmarkSignal Runtime is the enterprise AI control plane designed to give security teams visibility, policy enforcement, and audit evidence across AI workflows.</p>
         </div>
+        <div class="runtime-system-strip" aria-label="Runtime control-plane flow">
+          <div><span>Users / Agents / Workflows</span></div>
+          <i>→</i>
+          <div class="runtime-node"><span>LandmarkSignal Runtime</span></div>
+          <i>→</i>
+          <div><span>Models / Tools / Data</span></div>
+          <i>→</i>
+          <div><span>Evidence</span></div>
+        </div>
         <div class="offering-grid offering-grid-3">
-          <article class="offering-card">
+          <article class="offering-card product-lane radar">
             <p class="product-label">Visibility / intelligence</p>
             <h3>LandmarkSignal Radar</h3>
             <p>Sees AI activity and operational signals so security teams can understand what is happening across models, agents, and workflows.</p>
           </article>
-          <article class="offering-card">
+          <article class="offering-card product-lane shield">
             <p class="product-label">Enforcement / controls</p>
             <h3>LandmarkSignal Shield</h3>
             <p>Controls policy, tool use, model routing, and data access so approved actions can proceed and risky actions can be constrained.</p>
           </article>
-          <article class="offering-card">
+          <article class="offering-card product-lane audit">
             <p class="product-label">Evidence / traceability</p>
             <h3>LandmarkSignal Audit</h3>
             <p>Proves what happened with traceable evidence designed to support enterprise security, governance, and compliance reviews.</p>
@@ -63,24 +87,27 @@ import SiteHeader from "../components/SiteHeader.astro";
 
     <section class="section mission-section">
       <div class="container mission-panel">
-        <div>
+        <div class="mission-copy">
+          <p class="section-marker">Mission</p>
           <h2>Built for high-trust AI operations.</h2>
-          <p>LandmarkSignal is focused on helping organizations adopt AI without losing visibility, control, or evidence.</p>
+          <p>LandmarkSignal is focused on helping organizations adopt AI without losing visibility, control, or evidence. The company is built to support teams that need defensible AI operations, not ad hoc experimentation.</p>
         </div>
-        <a class="button button-secondary" href="/runtime">Explore Runtime</a>
+        <div class="mission-actions">
+          <a class="button button-secondary" href="/runtime">Explore Runtime</a>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section resources-section">
       <div class="container">
         <div class="section-intro section-intro-centered">
           <h2>Resources</h2>
-          <p>Focused publishing areas are coming soon.</p>
+          <p>Planned briefing topics and publication areas coming soon.</p>
         </div>
         <div class="resource-grid">
-          <article class="resource-card"><h3>Runtime Briefings</h3><p>Briefings and product overviews coming soon.</p></article>
-          <article class="resource-card"><h3>AI Control Plane Notes</h3><p>Implementation notes and guidance coming soon.</p></article>
-          <article class="resource-card"><h3>Security Architecture Updates</h3><p>Architecture updates and release notes coming soon.</p></article>
+          <article class="resource-card"><p class="resource-kicker">Coming soon</p><h3>Runtime Briefings</h3><p>Focused briefings on runtime governance patterns and operating models.</p></article>
+          <article class="resource-card"><p class="resource-kicker">Coming soon</p><h3>AI Control Plane Notes</h3><p>Practical notes around policy design, model routing, and control boundaries.</p></article>
+          <article class="resource-card"><p class="resource-kicker">Coming soon</p><h3>Security Architecture Updates</h3><p>Architecture updates and implementation guidance for high-trust AI operations.</p></article>
         </div>
       </div>
     </section>
