@@ -2,257 +2,86 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-
-const offerings = [
-  {
-    name: "LandmarkSignal Runtime",
-    label: "Platform",
-    description:
-      "The control plane for governed AI. Route, observe, and orchestrate intelligence across your enterprise.",
-    href: "/runtime",
-    icon: "runtime"
-  },
-  {
-    name: "LandmarkSignal Radar",
-    label: "Product",
-    description: "Signal intelligence that cuts through noise to surface what matters in real time.",
-    href: "/radar",
-    icon: "radar"
-  },
-  {
-    name: "LandmarkSignal Shield",
-    label: "Product",
-    description: "Policy enforcement and risk controls to protect data, models, tools, and users.",
-    href: "/shield",
-    icon: "shield"
-  },
-  {
-    name: "LandmarkSignal Audit",
-    label: "Product",
-    description: "Complete audit trails and evidence packaging for compliance and assurance.",
-    href: "/audit",
-    icon: "audit"
-  }
-];
 ---
 
-<BaseLayout title="LandmarkSignal | Trusted Intelligence for Secure AI Operations" description="LandmarkSignal turns noisy data and AI workflows into governed, auditable intelligence.">
+<BaseLayout title="LandmarkSignal | Intelligence you can trust" description="LandmarkSignal helps security and governance teams see, control, and prove enterprise AI activity.">
   <SiteHeader />
 
   <main>
-    <section class="hero hero-home">
+    <section class="hero hero-home hero-light">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Governed AI Intelligence Platform
-          </div>
-          <h1>Trusted intelligence for <span class="hero-gradient-text">secure AI operations</span></h1>
-          <p class="hero-body">LandmarkSignal turns noisy data and AI workflows into governed, auditable intelligence — so security, risk, and operations leaders can move with confidence.</p>
+          <h1>Intelligence you can trust. Decisions you can defend.</h1>
+          <p class="hero-body">LandmarkSignal helps security and governance teams see, control, and prove enterprise AI activity across models, agents, tools, and workflows.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="/runtime">Explore the platform</a>
-            <a class="button button-secondary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Platform%20Briefing">Request a briefing</a>
+            <a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Briefing">Request a Briefing</a>
+            <a class="button button-secondary" href="/runtime">Explore Runtime</a>
           </div>
         </div>
-        <aside class="runtime-architecture-hero" aria-label="Runtime architecture overview">
-          <div class="architecture-lane lane-inputs">
-            <p class="lane-title">Inputs</p>
-            <ul>
-              <li>User / Agent Request</li>
-              <li>Enterprise Data</li>
-              <li>Tool Request</li>
-              <li>External Signals</li>
-            </ul>
-          </div>
-
-          <div class="runtime-core">
-            <p class="runtime-core-kicker">LandmarkSignal Runtime</p>
-            <div class="runtime-core-grid">
-              <span>Identity</span>
-              <span>Policy</span>
-              <span>Model Router</span>
-              <span>Tool Gateway</span>
-              <span>Audit Log</span>
-            </div>
-          </div>
-
-          <div class="architecture-lane lane-outcomes">
-            <p class="lane-title">Outcomes</p>
-            <ul>
-              <li>Radar</li>
-              <li>Shield</li>
-              <li>Audit</li>
-              <li>Executive View</li>
-            </ul>
-          </div>
-
-          <div class="audit-trace-strip">
-            <p>Audit trace</p>
-            <ol>
-              <li>Actor</li>
-              <li>Policy verdict</li>
-              <li>Model route</li>
-              <li>Tool decision</li>
-              <li>Evidence record</li>
-            </ol>
-            <div class="status-chips" aria-label="runtime status">
-              <span>ALLOW</span><span>REDACT</span><span>LOGGED</span>
-            </div>
-          </div>
+        <aside class="hero-abstract" aria-label="LandmarkSignal platform overview visual">
+          <div class="abstract-node">Identity & Tenant Scope</div>
+          <div class="abstract-node">Policy & Tool Controls</div>
+          <div class="abstract-node">Model Routing</div>
+          <div class="abstract-node">Evidence Trace</div>
         </aside>
       </div>
     </section>
 
-    <section class="section section-runtime-controls" id="runtime-controls">
-      <div class="container">
-        <div class="section-intro runtime-controls-intro">
-          <p class="section-marker">Runtime controls</p>
-          <h2>Control the AI actions your business depends on.</h2>
-          <p>LandmarkSignal Runtime gives teams a governed path between users, agents, models, tools, and enterprise data — with policy checks and audit evidence built into every step. See which AI agent accessed data, what model handled the request, which tool was called, what policy allowed or blocked it, and what evidence was recorded.</p>
-        </div>
-        <div class="runtime-controls-grid">
-          <article class="runtime-control-card">
-            <div class="control-card-icon icon-blue">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2.5" stroke="currentColor" stroke-width="1"/></svg>
-            </div>
-            <h3>Model routing</h3><p>Approved models only, selected by policy and context.</p>
-          </article>
-          <article class="runtime-control-card">
-            <div class="control-card-icon icon-purple">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5L12 4v4c0 2.5-2.2 4.3-5 5-2.8-.7-5-2.5-5-5V4l5-2.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
-            </div>
-            <h3>Tool mediation</h3><p>Every tool call checked before execution.</p>
-          </article>
-          <article class="runtime-control-card">
-            <div class="control-card-icon icon-teal">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M4 7h6M4 4.5h3M4 9.5h4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-            </div>
-            <h3>Data access</h3><p>Sensitive data paths constrained by tenant and policy.</p>
-          </article>
-          <article class="runtime-control-card">
-            <div class="control-card-icon icon-amber">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5h8M3 7.5h5M3 10h7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><rect x="1" y="1.5" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1"/></svg>
-            </div>
-            <h3>Audit evidence</h3><p>Decisions, actions, and outcomes recorded for review.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="runtime-audience-teaser">
-      <div class="container">
-        <div class="homepage-runtime-teaser">
-          <div class="homepage-runtime-teaser-copy">
-            <p class="section-marker">Runtime</p>
-            <h2>Built for high-trust AI operations</h2>
-            <p>
-              LandmarkSignal Runtime is designed for security, intelligence, compliance,
-              mission-support, and regulated teams that need AI agents to operate inside
-              governed boundaries — not outside them.
-            </p>
-            <p>
-              It gives organizations a control layer for agent identity, policy enforcement,
-              tool access, model governance, workflow execution, tenant separation, and
-              audit evidence.
-            </p>
-          </div>
-          <div class="homepage-runtime-teaser-actions">
-            <a class="button button-primary" href="/runtime">Explore Runtime</a>
-            <a class="button button-secondary" href="/runtime/architecture">View architecture</a>
-          </div>
-        </div>
+    <section class="section trust-chips-section">
+      <div class="container trust-chip-grid">
+        <article class="trust-chip"><h3>Governed by Design</h3><p>Controls are designed into AI workflows from request to response.</p></article>
+        <article class="trust-chip"><h3>AI Activity Visibility</h3><p>Teams can see operational signals across models, agents, and tools.</p></article>
+        <article class="trust-chip"><h3>Evidence You Can Defend</h3><p>Traceable records are built to support enterprise review and assurance.</p></article>
       </div>
     </section>
 
     <section class="section" id="products">
       <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Offerings</p>
-          <h2>One governed platform with specialized intelligence products.</h2>
+        <div class="section-intro section-intro-centered">
+          <h2>Secure AI operations without blind spots.</h2>
+          <p>LandmarkSignal Runtime is the enterprise AI control plane designed to give security teams visibility, policy enforcement, and audit evidence across AI workflows.</p>
         </div>
-        <div class="offering-grid">
-          {offerings.map((offering) => (
-            <a class="offering-card" href={offering.href}>
-              <span class={`offering-icon offering-icon-${offering.icon}`} aria-hidden="true"></span>
-              <p class="product-label">{offering.label}</p>
-              <h3>{offering.name}</h3>
-              <p>{offering.description}</p>
-            </a>
-          ))}
+        <div class="offering-grid offering-grid-3">
+          <article class="offering-card">
+            <p class="product-label">Visibility / intelligence</p>
+            <h3>LandmarkSignal Radar</h3>
+            <p>Sees AI activity and operational signals so security teams can understand what is happening across models, agents, and workflows.</p>
+          </article>
+          <article class="offering-card">
+            <p class="product-label">Enforcement / controls</p>
+            <h3>LandmarkSignal Shield</h3>
+            <p>Controls policy, tool use, model routing, and data access so approved actions can proceed and risky actions can be constrained.</p>
+          </article>
+          <article class="offering-card">
+            <p class="product-label">Evidence / traceability</p>
+            <h3>LandmarkSignal Audit</h3>
+            <p>Proves what happened with traceable evidence designed to support enterprise security, governance, and compliance reviews.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-accent" id="trust">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Governance</p>
-          <h2>Governance that earns trust</h2>
+    <section class="section mission-section">
+      <div class="container mission-panel">
+        <div>
+          <h2>Built for high-trust AI operations.</h2>
+          <p>LandmarkSignal is focused on helping organizations adopt AI without losing visibility, control, or evidence.</p>
         </div>
-        <div class="trust-grid">
-          <article class="control-item"><h3>Policy controls</h3><p>Define enforceable guardrails around model access, tool actions, and data handling policies.</p></article>
-          <article class="control-item"><h3>Audit trails</h3><p>Track who did what, through which system, with evidence that supports executive and compliance review.</p></article>
-          <article class="control-item"><h3>Secure model routing</h3><p>Direct requests only to approved model endpoints based on tenant policy and contextual risk requirements.</p></article>
-          <article class="control-item"><h3>Operational oversight</h3><p>Give security and operations teams clear visibility into AI workflows, outcomes, and control effectiveness.</p></article>
-        </div>
+        <a class="button button-secondary" href="/runtime">Explore Runtime</a>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Architecture</p>
-          <h2>LandmarkSignal Intelligence Architecture</h2>
+        <div class="section-intro section-intro-centered">
+          <h2>Resources</h2>
+          <p>Focused publishing areas are coming soon.</p>
         </div>
-        <div class="architecture-panel" aria-label="LandmarkSignal control plane architecture">
-          <article class="architecture-column">
-            <h3>Sources</h3>
-            <ul>
-              <li>Enterprise data</li>
-              <li>Applications</li>
-              <li>External signals</li>
-            </ul>
-          </article>
-          <article class="architecture-column architecture-column-runtime">
-            <h3>Runtime</h3>
-            <ul>
-              <li>Identity</li>
-              <li>Policy</li>
-              <li>Model routing</li>
-              <li>Tool gateway</li>
-              <li>Audit log</li>
-            </ul>
-          </article>
-          <article class="architecture-column">
-            <h3>Products</h3>
-            <ul>
-              <li>Radar</li>
-              <li>Shield</li>
-              <li>Audit</li>
-            </ul>
-          </article>
-          <article class="architecture-column">
-            <h3>Outcomes</h3>
-            <ul>
-              <li>Decision-ready intelligence</li>
-              <li>Enforced controls</li>
-              <li>Compliance evidence</li>
-            </ul>
-          </article>
+        <div class="resource-grid">
+          <article class="resource-card"><h3>Runtime Briefings</h3><p>Briefings and product overviews coming soon.</p></article>
+          <article class="resource-card"><h3>AI Control Plane Notes</h3><p>Implementation notes and guidance coming soon.</p></article>
+          <article class="resource-card"><h3>Security Architecture Updates</h3><p>Architecture updates and release notes coming soon.</p></article>
         </div>
-      </div>
-    </section>
-
-    <section class="trusted-strip">
-      <div class="container trusted-inner">
-        <p>Trusted in high-stakes environments</p>
-        <ul>
-          <li>National Security</li>
-          <li>Critical Infrastructure</li>
-          <li>Financial Services</li>
-          <li>Healthcare</li>
-          <li>Technology</li>
-        </ul>
       </div>
     </section>
   </main>
