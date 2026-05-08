@@ -3,274 +3,92 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
-const heroBullets = [
-  "Policy checks before agent action",
-  "Controlled access to tools, data, and models",
-  "Private/self-hosted deployment path",
-  "Audit trails for security, compliance, and accountability"
+const controls = [
+  "Agent identity and tenant context resolution before execution",
+  "Policy enforcement with explicit allow or deny outcomes",
+  "Tool governance for external APIs, internal systems, and data stores",
+  "Model routing based on sensitivity, task profile, and trust boundaries",
+  "Data access boundaries for knowledge bases, logs, and evidence records",
+  "Audit trails with representative trace metadata for review workflows"
 ];
 
-const governedFlow = [
-  "User",
-  "Runtime",
-  "Policy",
-  "Permissions",
-  "Approved tools/data/models",
-  "Audited result"
+const components = [
+  ["Policy Engine", "Evaluates requests against tenant policy, role intent, and workflow guardrails before action is allowed."],
+  ["Tool Gateway", "Mediates access to approved tools and APIs with scoped permissions and decision logging."],
+  ["Model Router", "Routes requests to approved model paths based on policy constraints and workload requirements."],
+  ["Identity & Tenant Controls", "Binds each request to actor identity, tenant scope, and intended purpose context."],
+  ["Audit Layer", "Captures representative traces, decision reasons, and execution metadata for governance review."]
 ];
 
-const capabilities = [
-  [
-    "Agent identity",
-    "Every agent has a defined role, purpose, permission scope, tenant context, and traceable identity."
-  ],
-  [
-    "Policy enforcement",
-    "Runtime checks actions before execution and fails closed when access is missing, unclear, or denied."
-  ],
-  [
-    "Tool governance",
-    "Browsers, APIs, databases, scanners, ticketing systems, cloud consoles, SIEMs, and code repositories sit behind controlled access."
-  ],
-  [
-    "Model governance",
-    "Runtime can route work to approved local, private, hosted, specialized, or smaller models based on sensitivity, task type, cost, and performance."
-  ],
-  [
-    "Data access",
-    "Documents, logs, evidence, vector stores, memory, and internal knowledge are accessed through governed boundaries."
-  ],
-  [
-    "Audit trails",
-    "Meaningful actions are recorded for security review, investigation, compliance, and accountability."
-  ]
+const lifecycle = [
+  "Request enters Runtime",
+  "Identity and tenant context are resolved",
+  "Policy is evaluated for role, purpose, and data scope",
+  "Tool and model access are mediated through governed pathways",
+  "Result is returned through the approved execution path",
+  "Audit trace is recorded for downstream review"
 ];
 
-const audiences = [
-  [
-    "Cybersecurity and intelligence teams",
-    "Investigate threats, enrich OSINT, correlate signals, review logs, and support analyst workflows without giving agents uncontrolled access to tools or evidence."
-  ],
-  [
-    "Defense, public-sector, and mission-support organizations",
-    "Run sensitive AI workflows in controlled environments where model use, tool access, data boundaries, and audit trails must be governed."
-  ],
-  [
-    "MSSPs, MDR providers, and security consultancies",
-    "Use AI across investigations, assessments, reporting, and monitoring while keeping each client's data, tools, and evidence separated."
-  ],
-  [
-    "OSINT, investigative, and private intelligence teams",
-    "Support due diligence, fraud research, executive-risk reviews, and digital investigations with repeatable, source-aware, auditable workflows."
-  ],
-  [
-    "Critical infrastructure and operational security teams",
-    "Assist with incident review, policy search, security documentation, and threat intelligence without allowing uncontrolled interaction with operational systems."
-  ],
-  [
-    "Regulated and compliance-heavy organizations",
-    "Adopt AI across sensitive workflows while preserving access control, evidence, model governance, and auditability."
-  ]
+const threats = [
+  "Prompt injection attempts that try to bypass policy intent",
+  "Data exfiltration risks across tools, models, and outbound channels",
+  "Tool misuse through over-permissioned or ungoverned execution",
+  "Privilege escalation via ambiguous identity or tenant context",
+  "Unsafe model routing for sensitive or mission-critical tasks",
+  "Missing audit evidence during governance or incident review",
+  "Shadow AI visibility gaps across distributed workflows",
+  "RAG data leakage from mis-scoped retrieval boundaries"
 ];
 
 const useCases = [
   "Cybersecurity investigation",
   "OSINT research",
-  "SOC 2 and compliance evidence collection",
+  "SOC 2 evidence collection workflows",
   "Vendor questionnaire review",
   "Business intelligence monitoring",
-  "Developer/code-review support",
+  "Developer and code-review support",
   "Customer-support automation",
-  "Multi-agent research workflows"
+  "Multi-agent workflow coordination"
 ];
 ---
 
-<BaseLayout
-  title="LandmarkSignal Runtime"
-  description="LandmarkSignal Runtime is the governed execution layer for private enterprise AI."
->
+<BaseLayout title="LandmarkSignal Runtime" description="The control plane for enterprise AI operations.">
   <SiteHeader />
 
-  <main id="top">
-    <section class="hero">
+  <main>
+    <section class="hero hero-enterprise">
       <div class="container hero-layout">
         <div class="hero-copy">
           <p class="hero-kicker">LandmarkSignal Runtime</p>
-          <h1>Run AI agents without losing control.</h1>
-          <p class="hero-body">
-            LandmarkSignal Runtime is a governed execution layer for private enterprise AI. It controls
-            agent identity, policy enforcement, tool access, model routing, workflow execution, and audit
-            trails across AI-powered operations.
-          </p>
-          <ul class="runtime-bullet-list" aria-label="Runtime key points">
-            {heroBullets.map((item) => <li>{item}</li>)}
-          </ul>
+          <h1>The control plane for enterprise AI operations.</h1>
+          <p class="hero-body">Runtime is designed to govern how AI requests move across identity, policy, models, tools, and data boundaries so teams can support high-trust operations with representative traceability.</p>
           <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Runtime%20Briefing"
-            >
-              Request a briefing
-            </a>
-            <a class="button button-secondary" href="/runtime/architecture">View technical architecture</a>
+            <a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Runtime%20Briefing">Request a Briefing</a>
+            <a class="button button-secondary" href="#what-runtime-controls">Explore Runtime</a>
           </div>
         </div>
-
-        <aside class="runtime-panel" aria-label="Representative runtime control panel">
-          <div class="panel-topline">
-            <div>
-              <p>Governed execution snapshot</p>
-              <span>Illustrative, non-live example</span>
-            </div>
-          </div>
+        <aside class="runtime-panel" aria-label="Illustrative Runtime Execution Panel">
+          <div class="panel-topline"><div><p>Illustrative Runtime Execution Panel</p><span>Example panel, non-live and non-production data</span></div></div>
           <dl class="event-details">
-            <div>
-              <dt>Request</dt>
-              <dd>Review a vendor questionnaire and retrieve supporting evidence.</dd>
-            </div>
-            <div>
-              <dt>Agent identity</dt>
-              <dd>third_party_risk_assistant / tenant-finance / scoped role</dd>
-            </div>
-            <div>
-              <dt>Policy verdict</dt>
-              <dd><span class="verdict">Allowed</span> after tenant, purpose, and evidence rules matched</dd>
-            </div>
-            <div>
-              <dt>Approved access</dt>
-              <dd>knowledge base, ticketing API, approved enterprise model</dd>
-            </div>
-            <div>
-              <dt>Workflow state</dt>
-              <dd>retrieve, evaluate, draft response, record evidence</dd>
-            </div>
-            <div>
-              <dt>Audit trail</dt>
-              <dd>trace ID, inputs, policy decision, tool calls, result metadata</dd>
-            </div>
+            <div><dt>Agent identity</dt><dd>vendor_review_assistant · tenant-finance · scoped role</dd></div>
+            <div><dt>Policy verdict</dt><dd><span class="verdict">Allowed</span> after identity, purpose, and data checks</dd></div>
+            <div><dt>Tool calls</dt><dd>knowledge base read · ticketing API lookup · export denied</dd></div>
+            <div><dt>Model route</dt><dd>approved private-model path for sensitive evaluation</dd></div>
+            <div><dt>Audit trace</dt><dd>representative trace ID, policy version, and result metadata</dd></div>
           </dl>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="problem">
-      <div class="container section-grid">
-        <div class="section-heading">
-          <p class="section-marker">Problem</p>
-          <h2>Enterprise AI needs more than a model.</h2>
-        </div>
-        <div class="runtime-prose">
-          <p>A model can answer questions. An agent can take action. That is where the risk begins.</p>
-          <p>
-            Once AI agents can touch documents, APIs, ticketing systems, databases, cloud tools, code
-            repositories, logs, customer records, or compliance evidence, the question changes from “Can
-            the AI do it?” to “Should it be allowed to do it?”
-          </p>
-          <p>LandmarkSignal Runtime answers that question before the action happens.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-accent" id="governed-execution">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Governed execution flow</p>
-          <h2>From open-ended prompting to governed execution</h2>
-        </div>
-        <ol class="runtime-flow" aria-label="Governed execution flow">
-          {governedFlow.map((step, index) => (
-            <li>
-              <span>{step}</span>
-              {index < governedFlow.length - 1 && <i aria-hidden="true">&rarr;</i>}
-            </li>
-          ))}
-        </ol>
-        <p class="hero-body runtime-flow-copy">
-          Runtime sits between users, agents, models, tools, and enterprise systems. Each meaningful
-          action can be evaluated against identity, tenant, role, purpose, policy, data scope, model
-          rules, and audit requirements before execution.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="runtime-capabilities">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Capabilities</p>
-          <h2>What Runtime controls</h2>
-        </div>
-        <div class="product-list runtime-capabilities-grid">
-          {capabilities.map(([title, body]) => (
-            <article class="product-item runtime-capability-card">
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-accent" id="runtime-audiences">
-      <div class="container">
-        <div class="section-intro">
-          <p class="section-marker">Who Runtime is for</p>
-          <h2>Built for teams that cannot afford uncontrolled AI</h2>
-          <p class="runtime-section-copy">
-            LandmarkSignal Runtime is designed for organizations where AI cannot operate as an unmanaged
-            assistant. These teams need privacy, policy enforcement, controlled tool access, tenant
-            separation, model governance, and defensible audit evidence before AI agents can interact
-            with sensitive data or operational systems.
-          </p>
-        </div>
-        <div class="runtime-audience-grid">
-          {audiences.map(([title, body]) => (
-            <article class="runtime-audience-card">
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-accent" id="runtime-use-cases">
-      <div class="container section-grid">
-        <div class="section-heading">
-          <p class="section-marker">Use cases</p>
-          <h2>Built for real enterprise workflows</h2>
-        </div>
-        <div class="runtime-use-case-content">
-          <p>
-            Runtime is designed for AI systems that do more than chat. It supports governed workflows
-            where agents retrieve evidence, call tools, analyze records, produce recommendations, and
-            leave a defensible trail.
-          </p>
-          <ul class="threat-list">
-            {useCases.map((item) => <li>{item}</li>)}
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="runtime-not">
-      <div class="container section-grid">
-        <div class="section-heading">
-          <p class="section-marker">Positioning</p>
-          <h2>Not a chatbot. Not a model wrapper.</h2>
-        </div>
-        <div class="runtime-prose">
-          <p>
-            LandmarkSignal Runtime is not a chatbot, a single AI model, an Ollama dashboard, an
-            OpenWebUI replacement, or a thin wrapper around hosted AI.
-          </p>
-          <p>Those systems may connect to it.</p>
-          <p>
-            Runtime is the governed operating layer beneath AI-powered applications — the part that
-            controls identity, policy, permissions, tools, models, workflows, logs, and evidence.
-          </p>
-        </div>
-      </div>
-    </section>
+    <section id="what-runtime-controls" class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What Runtime controls</p><h2>Governance before execution</h2></div><div class="runtime-use-case-content"><ul class="threat-list">{controls.map((item) => <li>{item}</li>)}</ul></div></div></section>
+    <section class="section"><div class="container"><div class="section-intro"><p class="section-marker">Where Runtime sits</p><h2>Architecture position in the AI stack</h2></div><div class="architecture-strip"><div><span>Users / Agents / Workflows</span><p>Requests and automation intent</p></div><i aria-hidden="true">→</i><div><span>Runtime</span><p>Identity, policy, routing, and boundary controls</p></div><i aria-hidden="true">→</i><div><span>Models / Tools / Data</span><p>Approved execution pathways</p></div><i aria-hidden="true">→</i><div><span>Audit / Evidence</span><p>Representative trace and review artifacts</p></div></div></div></section>
+    <section class="section section-accent"><div class="container"><div class="section-intro"><p class="section-marker">Core runtime components</p><h2>Modules designed to support controlled AI execution</h2></div><div class="product-list">{components.map(([title, body]) => <article class="product-item"><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+    <section class="section"><div class="container"><div class="section-intro"><p class="section-marker">Request lifecycle</p><h2>How Runtime handles each request path</h2></div><ol class="runtime-flow" aria-label="Runtime request lifecycle">{lifecycle.map((step, index) => <li><span>{index + 1}. {step}</span></li>)}</ol></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Threats addressed</p><h2>Reduce high-risk failure modes in enterprise AI workflows</h2></div><div class="runtime-use-case-content"><ul class="threat-list">{threats.map((item) => <li>{item}</li>)}</ul></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Deployment patterns</p><h2>Designed to support constrained enterprise environments</h2></div><div class="runtime-prose"><p>Runtime is designed to support local or self-hosted deployments, private cloud options, and hybrid operating models based on governance requirements.</p><p>Air-gapped packaging and deeper environment hardening are intended to follow roadmap sequencing and deployment-specific validation.</p></div></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What Runtime is not</p><h2>Runtime is not a standalone model or generic dashboard</h2></div><div class="runtime-prose"><p>Runtime is not an LLM, not just an inference server, and not only an agent framework.</p><p>It is not a generic observability dashboard and is not intended to replace IAM, SIEM, or DLP platforms.</p></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Use cases</p><h2>Workflows teams are built to support with Runtime</h2></div><div class="runtime-use-case-content"><ul class="threat-list">{useCases.map((item) => <li>{item}</li>)}</ul></div></div></section>
+    <section class="hero hero-enterprise"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Call to action</p><h2>Ready to see LandmarkSignal in action?</h2></div><div class="runtime-prose"><p>Request a focused Runtime briefing to review representative governance flows, deployment options, and adoption sequencing.</p><p><a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Runtime%20Briefing">Request a Briefing</a></p></div></div></section>
   </main>
 
   <SiteFooter />
