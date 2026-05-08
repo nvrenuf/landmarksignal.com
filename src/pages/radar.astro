@@ -4,16 +4,16 @@ import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
 const captures = [
-  "Model usage patterns, latency shifts, and unusual request bursts",
-  "Agent behavior across task types, tool invocation paths, and retries",
-  "Policy decision telemetry and exception trends",
-  "Cross-workflow signals that indicate operational drift or rising risk"
+  "Signal patterns across model usage, latency trends, and anomaly spikes",
+  "Agent behavior across workflows, tool invocation paths, and retries",
+  "Policy-decision telemetry and exception frequencies",
+  "Cross-workflow indicators that suggest operational drift"
 ];
 
 const components = [
-  ["Observability layer", "Collects normalized runtime and workflow telemetry across models, agents, and tools."],
-  ["Signal correlation engine", "Connects events across sessions to surface meaningful relationships and anomalies."],
-  ["Risk scoring", "Applies configurable scoring logic to prioritize signals for analyst review."]
+  ["Observability layer", "Collects normalized runtime telemetry across models, agents, and tools."],
+  ["Correlation engine", "Links related events across sessions to surface high-value patterns."],
+  ["Risk scoring module", "Applies configurable scoring to prioritize analyst investigation queues."]
 ];
 ---
 <BaseLayout title="LandmarkSignal Radar" description="Visibility and intelligence for secure AI operations.">
@@ -24,34 +24,32 @@ const components = [
         <div class="hero-copy">
           <p class="hero-kicker">LandmarkSignal Radar</p>
           <h1>Visibility and intelligence for secure AI operations.</h1>
-          <p class="hero-body">Radar helps teams see AI activity and operational signals across models, agents, tools, and workflows so emerging risk is easier to detect and investigate.</p>
+          <p class="hero-body">Radar is designed to help teams monitor AI activity, identify outlier behavior, and prioritize risk signals before they turn into operational incidents.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Radar%20Briefing">Request a Briefing</a>
+            <a class="button button-secondary" href="#what-it-does">Explore Radar</a>
           </div>
         </div>
         <aside class="runtime-panel" aria-label="Representative Radar signal panel">
-          <div class="panel-topline"><div><p>Signal summary panel</p><span>Illustrative, non-live example</span></div></div>
+          <div class="panel-topline"><div><p>Signal summary panel</p><span>Representative example, non-live data</span></div></div>
           <dl class="event-details">
-            <div><dt>Alert</dt><dd>Unexpected tool-call spike from research_agent_east.</dd></div>
-            <div><dt>Scope</dt><dd>Tenant: defense-ops / Workflow: supplier-diligence</dd></div>
-            <div><dt>Change detected</dt><dd>8x increase in model fallback and external lookup attempts</dd></div>
-            <div><dt>Risk score</dt><dd><span class="verdict">72 / 100</span> (review recommended)</dd></div>
+            <div><dt>Alert</dt><dd>Unexpected tool-call spike in supplier-review workflow</dd></div>
+            <div><dt>Context</dt><dd>Tenant: defense-ops · agent: research_agent_east</dd></div>
+            <div><dt>Detected shift</dt><dd>8x increase in fallback routes and external lookups</dd></div>
+            <div><dt>Risk score</dt><dd><span class="verdict">72 / 100</span> review recommended</dd></div>
           </dl>
         </aside>
       </div>
     </section>
 
-    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Coverage</p><h2>What Radar captures</h2></div><div class="runtime-use-case-content"><ul class="threat-list">{captures.map((item) => <li>{item}</li>)}</ul></div></div></section>
-
-    <section class="section"><div class="container"><div class="section-intro"><p class="section-marker">Architecture position</p><h2>Where Radar sits in the AI stack</h2></div><div class="architecture-strip"><div><span>Users & Systems</span><p>Operators, analysts, and workflow triggers</p></div><i aria-hidden="true">→</i><div><span>Runtime activity</span><p>Model calls, agent actions, tool usage</p></div><i aria-hidden="true">→</i><div><span>Radar</span><p>Telemetry normalization, correlation, risk scoring</p></div><i aria-hidden="true">→</i><div><span>Analyst outputs</span><p>Signal review queues and operational intelligence</p></div></div></div></section>
-
-    <section class="section section-accent"><div class="container"><div class="section-intro"><p class="section-marker">Core components</p><h2>Built for AI observability and intelligence</h2></div><div class="product-list">{components.map(([title, body]) => <article class="product-item"><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
-
-    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Threats addressed</p><h2>Reduce blind spots before they become incidents</h2></div><div class="runtime-use-case-content"><ul class="threat-list"><li>Lack of visibility into model and agent behavior</li><li>Prompt-injection indicators hidden inside workflow noise</li><li>Unauthorized tool paths and unexplained execution drift</li><li>Slow detection of abnormal operational patterns</li></ul></div></div></section>
-
-    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Deployment patterns</p><h2>Designed to support enterprise deployment constraints</h2></div><div class="runtime-prose"><p>Radar is designed to support local/self-hosted, private cloud, and hybrid deployment patterns depending on operational and regulatory requirements.</p><p>Some deployment combinations may be delivered in phases and can follow roadmap sequencing with customer environments.</p></div></div></section>
-
-    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What it is not</p><h2>Radar is not a generic SIEM replacement</h2></div><div class="runtime-prose"><p>Radar focuses on AI runtime visibility, operational correlation, and AI-specific risk signals.</p><p>It is not positioned as a full generic SIEM platform for every infrastructure telemetry source.</p></div></div></section>
+    <section id="what-it-does" class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What it does</p><h2>What Radar captures and correlates</h2></div><div class="runtime-use-case-content"><ul class="threat-list">{captures.map((item) => <li>{item}</li>)}</ul></div></div></section>
+    <section class="section"><div class="container"><div class="section-intro"><p class="section-marker">Where it sits</p><h2>Architecture position in the AI stack</h2></div><div class="architecture-strip"><div><span>Data sources</span><p>Model calls, agent actions, tool events</p></div><i aria-hidden="true">→</i><div><span>Radar</span><p>Normalization, correlation, risk scoring</p></div><i aria-hidden="true">→</i><div><span>Signals and insights</span><p>Prioritized queues and operational context</p></div></div></div></section>
+    <section class="section section-accent"><div class="container"><div class="section-intro"><p class="section-marker">Core components</p><h2>Modules built for AI observability</h2></div><div class="product-list">{components.map(([title, body]) => <article class="product-item"><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Threats addressed</p><h2>Reduce blind spots in AI operations</h2></div><div class="runtime-use-case-content"><ul class="threat-list"><li>Hidden anomaly patterns across distributed AI workflows</li><li>Prompt-injection indicators buried in routine activity</li><li>Unauthorized execution drift and unstable routing behavior</li></ul></div></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Deployment patterns</p><h2>Designed to support enterprise constraints</h2></div><div class="runtime-prose"><p>Radar is designed to support self-hosted, private cloud, and hybrid deployment patterns.</p><p>Deployment depth and packaging can follow roadmap sequencing by environment.</p></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What it is not</p><h2>Radar is not a general SIEM platform</h2></div><div class="runtime-prose"><p>Radar is focused on AI-runtime visibility and AI-specific risk correlation.</p><p>It is not intended to replace every infrastructure-wide logging or SIEM workflow.</p></div></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Use cases and audience</p><h2>Who uses Radar</h2></div><div class="runtime-prose"><p>Security operations and AI platform teams use Radar to triage unusual behavior, prioritize investigations, and improve runtime decision quality.</p><p>Example workflow: review high-risk signal clusters, validate policy context, and route findings into incident handling.</p></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Call to action</p><h2>Ready to see Radar in action?</h2></div><div class="runtime-prose"><p>Request a product briefing to review representative scenarios and deployment options for your environment.</p><p><a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Radar%20Briefing">Request a Briefing</a></p></div></div></section>
   </main>
   <SiteFooter />
 </BaseLayout>
