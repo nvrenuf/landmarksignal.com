@@ -3,21 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 ---
-<BaseLayout title="LandmarkSignal Audit" description="Evidence trails for AI governance, compliance, and assurance.">
+<BaseLayout title="LandmarkSignal Audit" description="Evidence and traceability for AI decisions.">
   <SiteHeader />
   <main>
-    <section class="hero product-hero">
-      <div class="container hero-copy">
-        <p class="hero-kicker">Early Product Page</p>
-        <h1>Evidence trails for AI governance, compliance, and assurance.</h1>
-        <p class="hero-body">Audit records what happened, why it happened, who approved it, what tools were touched, and what evidence supports the decision.</p>
-        <p class="hero-body">This is an early product page and will be expanded with assurance workflows and reporting pathways.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="/runtime">Explore Runtime</a>
-          <a class="button button-secondary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Platform%20Briefing">Request a briefing</a>
-        </div>
-      </div>
-    </section>
+    <section class="hero"><div class="container hero-layout"><div class="hero-copy"><p class="hero-kicker">LandmarkSignal Audit</p><h1>Evidence and traceability for AI decisions.</h1><p class="hero-body">Audit records decision context, policy outcomes, model usage, and tool actions to support review, investigation, and defensible assurance workflows.</p><div class="hero-actions"><a class="button button-primary" href="mailto:briefings@landmarksignal.com?subject=LandmarkSignal%20Audit%20Briefing">Request a Briefing</a></div></div><aside class="runtime-panel"><div class="panel-topline"><div><p>Audit record panel</p><span>Illustrative, non-live example</span></div></div><dl class="event-details"><div><dt>Trace ID</dt><dd>ls-audit-7f3d-21a4 / tenant-gov-west</dd></div><div><dt>Decision context</dt><dd>Policy check, tool approval, and model route recorded</dd></div><div><dt>Evidence chain</dt><dd>Input hash, policy version, tool call summary, output metadata</dd></div><div><dt>Export status</dt><dd>Prepared for compliance review package</dd></div></dl></aside></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Captured evidence</p><h2>What Audit captures</h2></div><div class="runtime-use-case-content"><ul class="threat-list"><li>Policy decisions, actor identity, and workflow intent metadata</li><li>Model routing choices and execution context</li><li>Tool-call summaries, access outcomes, and approvals</li><li>Structured records for review, retention, and downstream reporting</li></ul></div></div></section>
+    <section class="section"><div class="container"><div class="section-intro"><p class="section-marker">Architecture position</p><h2>Where Audit sits in the AI stack</h2></div><div class="architecture-strip"><div><span>Runtime actions</span><p>Requests, decisions, and approved execution paths</p></div><i>→</i><div><span>Audit generation</span><p>Record creation with trace IDs and evidence references</p></div><i>→</i><div><span>Evidence management</span><p>Retention, export, and governance workflows</p></div><i>→</i><div><span>Review outcomes</span><p>Security, compliance, and assurance reporting</p></div></div></div></section>
+    <section class="section section-accent"><div class="container"><div class="section-intro"><p class="section-marker">Core components</p><h2>Traceability components</h2></div><div class="product-list"><article class="product-item"><h3>Record generator</h3><p>Builds structured, queryable records from AI runtime events and control decisions.</p></article><article class="product-item"><h3>SIEM and workflow integration</h3><p>Designed to integrate with downstream review systems and investigation workflows.</p></article><article class="product-item"><h3>Evidence vault</h3><p>Organizes retained records and evidence references for defensible audit trails.</p></article></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Threats addressed</p><h2>Close evidence gaps in AI governance</h2></div><div class="runtime-use-case-content"><ul class="threat-list"><li>Missing audit evidence during security or compliance review</li><li>Inability to reconstruct why an AI decision was approved</li><li>Gaps between policy enforcement and retained records</li><li>Low-confidence reporting due to fragmented logs</li></ul></div></div></section>
+    <section class="section section-accent"><div class="container section-grid"><div class="section-heading"><p class="section-marker">Deployment patterns</p><h2>Designed to support varied assurance environments</h2></div><div class="runtime-prose"><p>Audit is designed to support local/self-hosted, private cloud, and hybrid deployment patterns with tenant-scoped evidence handling.</p><p>Advanced retention controls and integration depth may follow roadmap sequencing based on deployment requirements.</p></div></div></section>
+    <section class="section"><div class="container section-grid"><div class="section-heading"><p class="section-marker">What it is not</p><h2>Audit is not a generic log aggregator</h2></div><div class="runtime-prose"><p>Audit focuses on evidence and traceability for AI control decisions and actions.</p><p>It is not positioned as a broad replacement for every centralized logging platform.</p></div></div></section>
   </main>
   <SiteFooter />
 </BaseLayout>
